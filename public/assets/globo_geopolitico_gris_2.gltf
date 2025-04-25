@@ -1,0 +1,233 @@
+{
+    "asset": {
+        "copyright": "2024 (c) Adobe Inc.",
+        "generator": "Adobe Substance 3D Stager - 522bab3571c29d3cf2b1b071f74e2d9861da2e41",
+        "version": "2.0"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "componentType": 5126,
+            "count": 6320,
+            "type": "VEC3",
+            "max": [
+                0.054789699614048007,
+                0.11013279855251312,
+                0.0547897070646286
+            ],
+            "min": [
+                -0.054789699614048007,
+                0.0005534299998544157,
+                -0.0547897070646286
+            ]
+        },
+        {
+            "bufferView": 1,
+            "componentType": 5126,
+            "count": 6320,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "componentType": 5126,
+            "count": 6320,
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 3,
+            "componentType": 5126,
+            "count": 6320,
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 4,
+            "componentType": 5125,
+            "count": 9360,
+            "type": "SCALAR",
+            "max": [
+                6319.0
+            ],
+            "min": [
+                0.0
+            ]
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 75840,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 75840,
+            "byteLength": 75840,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 151680,
+            "byteLength": 101120,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 252800,
+            "byteLength": 50560,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 303360,
+            "byteLength": 37440,
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 340800,
+            "uri": "globo_geopolitico_gris_2_binary.bin"
+        }
+    ],
+    "images": [
+        {
+            "name": "texture2970",
+            "uri": "globo_geopolitico_gris_2_images/texture2970.jpg",
+            "mimeType": "image/jpeg"
+        },
+        {
+            "name": "image",
+            "uri": "globo_geopolitico_gris_2_images/image.png",
+            "mimeType": "image/png"
+        },
+        {
+            "name": "earth_MAT_normal",
+            "uri": "globo_geopolitico_gris_2_images/earth_MAT_normal.png",
+            "mimeType": "image/png"
+        }
+    ],
+    "materials": [
+        {
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.0,
+                "metallicRoughnessTexture": {
+                    "index": 1
+                }
+            },
+            "normalTexture": {
+                "index": 2,
+                "scale": 0.0
+            },
+            "name": "earth_MAT",
+            "doubleSided": true,
+            "extensions": {
+                "ADOBE_materials_clearcoat_specular": {
+                    "clearcoatIor": 1.600000023841858,
+                    "clearcoatSpecularFactor": 1
+                },
+                "KHR_materials_clearcoat": {
+                    "clearcoatFactor": 0.12999999523162843,
+                    "clearcoatRoughnessFactor": 0
+                },
+                "KHR_materials_specular": {
+                    "specularColorFactor": [
+                        0.8713662624359131,
+                        0.8713662624359131,
+                        0.8713662624359131
+                    ],
+                    "specularFactor": 0
+                },
+                "KHR_materials_ior": {
+                    "ior": 1.600000023841858
+                }
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "earth_GEO",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TANGENT": 2,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "working_cam_n3d"
+        },
+        {
+            "children": [
+                2
+            ],
+            "translation": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                15.0,
+                15.0,
+                15.0
+            ],
+            "name": "earth"
+        },
+        {
+            "mesh": 0,
+            "name": "earth_GEO"
+        }
+    ],
+    "samplers": [
+        {}
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                1
+            ],
+            "name": "scene"
+        }
+    ],
+    "textures": [
+        {
+            "name": "texture2970",
+            "sampler": 0,
+            "source": 0
+        },
+        {
+            "name": "image",
+            "sampler": 0,
+            "source": 1
+        },
+        {
+            "name": "earth_MAT_material::normal::image",
+            "sampler": 0,
+            "source": 2
+        }
+    ],
+    "scene": 0,
+    "extensionsUsed": [
+        "KHR_materials_ior",
+        "KHR_materials_specular",
+        "KHR_materials_clearcoat",
+        "ADOBE_materials_clearcoat_specular"
+    ]
+}
