@@ -194,7 +194,7 @@ export default function Carrusel({
 
         // Accounting for the clone cards when calculating position
         const selectedCard = cards[index];
-        const selectedCardRect = selectedCard.getBoundingClientRect();
+        const selectedCardRect = selectedCard?.getBoundingClientRect();
 
         // Calculating card width and spacing
         const cardWidth = (selectedCard as HTMLElement).offsetWidth;
@@ -634,39 +634,41 @@ export default function Carrusel({
                 <div className="blur-overlay blur-right"></div>
 
                 <div className="timeline-wrapper" id="timeline">
-                    <div className="timeline-card" data-year="2003" data-location="Colombia">
+
+                    <div className="timeline-card" data-year="2001" data-location="Colombia">
                         <div className="compact-content" onClick={() => { setterCountry("Colombia"); selectCard(0); }}>
-                            <div className="year">2003</div>
-                            <div className="status">- 2006</div>
+                            <div className="year">2001</div>
+                            <div className="status">- 2005</div>
                             <div className="logo-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Logos%C3%ADmbolo_UPB.svg/512px-Logos%C3%ADmbolo_UPB.svg.png" alt="UPB Logo" className="image" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
                             </div>
-                            <div className="card-location">Medellín, Colombia</div>
+                            <div className="card-location">Medellín, Colombia </div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Logos%C3%ADmbolo_UPB.svg/512px-Logos%C3%ADmbolo_UPB.svg.png" alt="Company Logo" className="logo" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
                                 <div className="year-container">
-                                    <div className="year">2003</div>
-                                    <div className="status">- 2006</div>
+                                    <div className="year">2001</div>
+                                    <div className="status">- 2005</div>
                                 </div>
                             </div>
 
                             <div className="role-container">
-                                <div id="director-role-2003" className="role" >
-                                    Junior Engineer <span id="role-arrow-2003" className="role-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div id="director-role-2001" className="role" >
+                                    Junior Research Engineer<span id="role-arrow-2001" className="role-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleRole(2001)}>▾</span>
                                 </div>
-                                <div className="department">Department of Civil Engineering</div>
-                            </div>
-
-                            <div className="section">
-                                <div className="section-title-container">
-                                    <div className="section-title" >
-                                        Empathetic Leadership <span id="leadership-arrow-2003" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div className="department">Department of Chemical Engineering.</div>
+                                <div id="role-content-2001" className="achievement-content">
+                                    <div className="ml-4">
+                                        <div className="panel-section">
+                                            <h4>What did I do?:</h4>
+                                            <p>Advance research and development of green and clean technologies by optimizing industrial processes for water reuse and by incorporating industrial sludge into high-value products. This entailed conducting lab-scale experiments, coordinating industrial-level tests, and applying simulation and design tools to ensure efficient, sustainable outcomes.</p>
+                                        </div>
+                                        <div className="panel-section">
+                                            <h4>How did I do it?:</h4>
+                                            <p>Successfully repurposing paper industry sludge into eco-friendly ceramic bricks. Through extensive lab tests and subsequent industrial-scale trials, I demonstrated that these residual materials could be effectively integrated into brick production, resulting in environmentally responsible and economically feasible building solutions.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="leadership-content-2003" className="leadership-content">
-                                    <p>Participated in collaborative research projects with senior staff, developing foundational team skills.</p>
                                 </div>
                             </div>
 
@@ -676,64 +678,101 @@ export default function Carrusel({
                                         Achievements
                                     </div>
                                 </div>
-                                <div id="achievement1-2003" className="achievement-item"
-                                    data-panel="achievement1-panel-2003"
+                                <div id="achievement1-2001" className="achievement-item"
+                                    data-panel="achievement1-panel-2001"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Research focused on civil engineering infrastructure assessment
-                                        <span id="achievement1-arrow-2003" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Innovative Water Reuse Implementations
+                                        <span id="achievement-arrow-2001-1" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2001-1")}>▾</span>
                                     </span>
                                 </div>
-                                <div id="achievement2-2003" className="achievement-item"
-                                    data-panel="achievement2-panel-2003"
+                                <div id="achievement-content-2001-1" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Successfully evaluated and integrated water reuse solutions across various industrial sectors, including tannery, galvanic, beef, and textiles.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement2-2001" className="achievement-item"
+                                    data-panel="achievement2-panel-2001"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Early career development in structural analysis
-                                        <span id="achievement2-arrow-2003" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Industrial Sludge Recycling
+                                        <span id="achievement-arrow-2001-2" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2001-2")}>▾</span>
                                     </span>
+                                </div>
+                                <div id="achievement-content-2001-2" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Developed novel methods for recycling paper-industry sludge, transforming waste materials into ceramic products and lightweight aggregates for construction.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement3-2001" className="achievement-item"
+                                    data-panel="achievement3-panel-2001"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Process Optimization & Scale-Up
+                                        <span id="achievement-arrow-2001-3" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2001-3")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2001-3" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Employed computerized experimental designs to optimize synthesis protocols, leading to industrial-level testing and practical adoption of lightweight aggregates.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement4-2001" className="achievement-item"
+                                    data-panel="achievement4-panel-2001"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Energy-Efficient Process Simulation
+                                        <span id="achievement-arrow-2001-4" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2001-4")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2001-4" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Modeled a lightweight aggregate process with an integrated heat recycling system, demonstrating potential energy savings and sustainable practices.</p>
+                                    </div>
                                 </div>
                                 <div className="achievements-bottom-line"></div>
                             </div>
 
-                            <div className="skills">
-                                <div className="skills-title">Skills <span className="info-icon">i</span></div>
+                            <div className="skills fixed bottom-0 rounded-b-[20px]">
+                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="timeline-card" data-year="2007" data-location="USA">
-                        <div className="compact-content" onClick={() => { setterCountry("USA"); selectCard(1); }}>
-                            <div className="year">2007</div>
-                            <div className="status">- 2009</div>
+                    <div className="timeline-card" data-year="2017" data-location="Australia">
+                        <div className="compact-content" onClick={() => { setterCountry("Australia"); selectCard(1); }}>
+                            <div className="year">2017</div>
+                            <div className="status">- 2019</div>
                             <div className="logo-container">
-                                <img src="https://download.logo.wine/logo/Kansas_State_University/Kansas_State_University-Logo.wine.png" alt="KSU Logo" className="image" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
                             </div>
-                            <div className="card-location">Manhattan, Kansas, USA</div>
+                            <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://download.logo.wine/logo/Kansas_State_University/Kansas_State_University-Logo.wine.png" alt="Company Logo" className="logo" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
                                 <div className="year-container">
-                                    <div className="year">2007</div>
-                                    <div className="status">- 2009</div>
+                                    <div className="year">2017</div>
+                                    <div className="status">- 2019</div>
                                 </div>
                             </div>
 
                             <div className="role-container">
-                                <div id="director-role-2007" className="role" >
-                                    Research Assistant <span id="role-arrow-2007" className="role-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div id="director-role-2017" className="role" >
+                                    Commercial and Contract Manager <span id="role-arrow-2017" className="role-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleRole(2017)}>▾</span>
                                 </div>
-                                <div className="department">Department of Agronomy</div>
-                            </div>
-
-                            <div className="section">
-                                <div className="section-title-container">
-                                    <div className="section-title" >
-                                        Empathetic Leadership <span id="leadership-arrow-2007" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div className="department">of Wind Energy Projects.</div>
+                                <div id="role-content-2017" className="achievement-content">
+                                    <div className="ml-4">
+                                        <div className="panel-section">
+                                            <h4>What did I do?:</h4>
+                                            <p>Maximize the profitability and success of wind farm projects by overseeing commercial and contractual aspects, from bidding strategies and cost analysis to contract negotiation. Ensure alignment with organizational goals and compliance, supporting the Australian Sales Team to secure and deliver profitable, operationally sound projects.</p>
+                                        </div>
+                                        <div className="panel-section">
+                                            <h4>How did I do it?:</h4>
+                                            <p>I developed a comparative tool that standardized commercial metrics across potential projects. This innovation enabled the team and the Board of Directors to objectively assess and decide whether to proceed with the EPC contract for a given wind farm, ultimately strengthening the decision-making process.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="leadership-content-2007" className="leadership-content">
-                                    <p>Coordinated field experiments with a small team of junior researchers, developing early leadership capabilities.</p>
                                 </div>
                             </div>
 
@@ -743,64 +782,114 @@ export default function Carrusel({
                                         Achievements
                                     </div>
                                 </div>
-                                <div id="achievement1-2007" className="achievement-item"
-                                    data-panel="achievement1-panel-2007"
+                                <div id="achievement1-2017" className="achievement-item"
+                                    data-panel="achievement1-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Agricultural research on sustainable farming practices
-                                        <span id="achievement1-arrow-2007" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Secured Profitable Contracts
+                                        <span id="achievement-arrow-2017-1" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-1")}>▾</span>
                                     </span>
                                 </div>
-                                <div id="achievement2-2007" className="achievement-item"
-                                    data-panel="achievement2-panel-2007"
+                                <div id="achievement-content-2017-1" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Led the negotiation of multiple wind farm project contracts, ensuring favorable terms and maximizing profitability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement2-2017" className="achievement-item"
+                                    data-panel="achievement2-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Academic contribution to soil conservation techniques
-                                        <span id="achievement2-arrow-2007" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Optimized Bidding Strategies
+                                        <span id="achievement-arrow-2017-2" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-2")}>▾</span>
                                     </span>
+                                </div>
+                                <div id="achievement-content-2017-2" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Developed and refined bidding strategies that integrated accurate cost inputs, financial modeling, and risk assessments, resulting in successful tender outcomes.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement3-2017" className="achievement-item"
+                                    data-panel="achievement3-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Enhanced Data-Driven Decision-Making
+                                        <span id="achievement-arrow-2017-3" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-3")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-3" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Implemented detailed pricing analyses and financial evaluations, enabling the leadership team to make informed decisions regarding project viability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement4-2017" className="achievement-item"
+                                    data-panel="achievement4-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Streamlined Approval Processes
+                                        <span id="achievement-arrow-2017-4" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-4")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-4" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Coordinated cross-functional reviews and internal approvals, reducing turnaround time and aligning stakeholders prior to Board engagement.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement5-2017" className="achievement-item"
+                                    data-panel="achievement5-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Improved Risk Management
+                                        <span id="achievement-arrow-2017-5" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-5")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-5" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Oversaw insurance and bonding arrangements, mitigating financial and operational risks while maintaining compliance with industry standards.</p>
+                                    </div>
                                 </div>
                                 <div className="achievements-bottom-line"></div>
                             </div>
 
-                            <div className="skills">
-                                <div className="skills-title">Skills <span className="info-icon">i</span></div>
+                            <div className="skills fixed bottom-0 rounded-b-[20px]">
+                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="timeline-card" data-year="2010" data-location="USA">
-                        <div className="compact-content" onClick={() => { setterCountry("USA"); selectCard(2); }}>
-                            <div className="year">2010</div>
-                            <div className="status">- 2012</div>
+                    <div className="timeline-card" data-year="2017" data-location="Australia">
+                        <div className="compact-content" onClick={() => { setterCountry("Australia"); selectCard(2); }}>
+                            <div className="year">2017</div>
+                            <div className="status">- 2019</div>
                             <div className="logo-container">
-                                <img src="https://1000marcas.net/wp-content/uploads/2022/07/Johns-Hopkins-University-Logo-tumb-1280x720.png" alt="JHU Logo" className="image" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
                             </div>
-                            <div className="card-location">Baltimore, USA</div>
+                            <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://1000marcas.net/wp-content/uploads/2022/07/Johns-Hopkins-University-Logo-tumb-1280x720.png" alt="Company Logo" className="logo" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
                                 <div className="year-container">
-                                    <div className="year">2010</div>
-                                    <div className="status">- 2012</div>
+                                    <div className="year">2017</div>
+                                    <div className="status">- 2019</div>
                                 </div>
                             </div>
 
                             <div className="role-container">
-                                <div id="director-role-2010" className="role" >
-                                    Research Assistant <span id="role-arrow-2010" className="role-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div id="director-role-2017" className="role" >
+                                    Commercial and Contract Manager <span id="role-arrow-2017" className="role-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleRole(2017)}>▾</span>
                                 </div>
-                                <div className="department">Department of Material Science</div>
-                            </div>
-
-                            <div className="section">
-                                <div className="section-title-container">
-                                    <div className="section-title" >
-                                        Empathetic Leadership <span id="leadership-arrow-2010" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div className="department">of Wind Energy Projects.</div>
+                                <div id="role-content-2017" className="achievement-content">
+                                    <div className="ml-4">
+                                        <div className="panel-section">
+                                            <h4>What did I do?:</h4>
+                                            <p>Maximize the profitability and success of wind farm projects by overseeing commercial and contractual aspects, from bidding strategies and cost analysis to contract negotiation. Ensure alignment with organizational goals and compliance, supporting the Australian Sales Team to secure and deliver profitable, operationally sound projects.</p>
+                                        </div>
+                                        <div className="panel-section">
+                                            <h4>How did I do it?:</h4>
+                                            <p>I developed a comparative tool that standardized commercial metrics across potential projects. This innovation enabled the team and the Board of Directors to objectively assess and decide whether to proceed with the EPC contract for a given wind farm, ultimately strengthening the decision-making process.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="leadership-content-2010" className="leadership-content">
-                                    <p>Led a focused research initiative, managing project timelines and deliverables while mentoring undergraduate students.</p>
                                 </div>
                             </div>
 
@@ -810,64 +899,114 @@ export default function Carrusel({
                                         Achievements
                                     </div>
                                 </div>
-                                <div id="achievement1-2010" className="achievement-item"
-                                    data-panel="achievement1-panel-2010"
+                                <div id="achievement1-2017" className="achievement-item"
+                                    data-panel="achievement1-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Materials research on composite structures
-                                        <span id="achievement1-arrow-2010" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Secured Profitable Contracts
+                                        <span id="achievement-arrow-2017-1" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-1")}>▾</span>
                                     </span>
                                 </div>
-                                <div id="achievement2-2010" className="achievement-item"
-                                    data-panel="achievement2-panel-2010"
+                                <div id="achievement-content-2017-1" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Led the negotiation of multiple wind farm project contracts, ensuring favorable terms and maximizing profitability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement2-2017" className="achievement-item"
+                                    data-panel="achievement2-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Engineering advances in sustainable materials
-                                        <span id="achievement2-arrow-2010" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Optimized Bidding Strategies
+                                        <span id="achievement-arrow-2017-2" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-2")}>▾</span>
                                     </span>
+                                </div>
+                                <div id="achievement-content-2017-2" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Developed and refined bidding strategies that integrated accurate cost inputs, financial modeling, and risk assessments, resulting in successful tender outcomes.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement3-2017" className="achievement-item"
+                                    data-panel="achievement3-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Enhanced Data-Driven Decision-Making
+                                        <span id="achievement-arrow-2017-3" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-3")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-3" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Implemented detailed pricing analyses and financial evaluations, enabling the leadership team to make informed decisions regarding project viability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement4-2017" className="achievement-item"
+                                    data-panel="achievement4-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Streamlined Approval Processes
+                                        <span id="achievement-arrow-2017-4" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-4")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-4" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Coordinated cross-functional reviews and internal approvals, reducing turnaround time and aligning stakeholders prior to Board engagement.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement5-2017" className="achievement-item"
+                                    data-panel="achievement5-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Improved Risk Management
+                                        <span id="achievement-arrow-2017-5" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-5")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-5" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Oversaw insurance and bonding arrangements, mitigating financial and operational risks while maintaining compliance with industry standards.</p>
+                                    </div>
                                 </div>
                                 <div className="achievements-bottom-line"></div>
                             </div>
 
-                            <div className="skills">
-                                <div className="skills-title">Skills <span className="info-icon">i</span></div>
+                            <div className="skills fixed bottom-0 rounded-b-[20px]">
+                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="timeline-card" data-year="2013" data-location="Colombia">
-                        <div className="compact-content" onClick={() => { setterCountry("Colombia"); selectCard(3); }}>
-                            <div className="year">2013</div>
-                            <div className="status">- 2014</div>
+                    <div className="timeline-card" data-year="2017" data-location="Australia">
+                        <div className="compact-content" onClick={() => { setterCountry("Australia"); selectCard(3); }}>
+                            <div className="year">2017</div>
+                            <div className="status">- 2019</div>
                             <div className="logo-container">
-                                <img src="https://www.ccyk.com.co/wp-content/uploads/2018/07/logo-universidad-medellin-1.png" alt="UDEM Logo" className="image" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
                             </div>
-                            <div className="card-location">Medellín, Colombia</div>
+                            <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://www.ccyk.com.co/wp-content/uploads/2018/07/logo-universidad-medellin-1.png" alt="Company Logo" className="logo" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
                                 <div className="year-container">
-                                    <div className="year">2013</div>
-                                    <div className="status">- 2014</div>
+                                    <div className="year">2017</div>
+                                    <div className="status">- 2019</div>
                                 </div>
                             </div>
 
                             <div className="role-container">
-                                <div id="director-role-2013" className="role" >
-                                    Assistant Professor <span id="role-arrow-2013" className="role-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div id="director-role-2017" className="role" >
+                                    Commercial and Contract Manager <span id="role-arrow-2017" className="role-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleRole(2017)}>▾</span>
                                 </div>
-                                <div className="department">Department of Environmental Engineering</div>
-                            </div>
-
-                            <div className="section">
-                                <div className="section-title-container">
-                                    <div className="section-title" >
-                                        Empathetic Leadership <span id="leadership-arrow-2013" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div className="department">of Wind Energy Projects.</div>
+                                <div id="role-content-2017" className="achievement-content">
+                                    <div className="ml-4">
+                                        <div className="panel-section">
+                                            <h4>What did I do?:</h4>
+                                            <p>Maximize the profitability and success of wind farm projects by overseeing commercial and contractual aspects, from bidding strategies and cost analysis to contract negotiation. Ensure alignment with organizational goals and compliance, supporting the Australian Sales Team to secure and deliver profitable, operationally sound projects.</p>
+                                        </div>
+                                        <div className="panel-section">
+                                            <h4>How did I do it?:</h4>
+                                            <p>I developed a comparative tool that standardized commercial metrics across potential projects. This innovation enabled the team and the Board of Directors to objectively assess and decide whether to proceed with the EPC contract for a given wind farm, ultimately strengthening the decision-making process.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="leadership-content-2013" className="leadership-content">
-                                    <p>Developed and led new courses in environmental engineering, mentoring students and guiding thesis projects.</p>
                                 </div>
                             </div>
 
@@ -877,64 +1016,114 @@ export default function Carrusel({
                                         Achievements
                                     </div>
                                 </div>
-                                <div id="achievement1-2013" className="achievement-item"
-                                    data-panel="achievement1-panel-2013"
+                                <div id="achievement1-2017" className="achievement-item"
+                                    data-panel="achievement1-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Academic leadership in curriculum development
-                                        <span id="achievement1-arrow-2013" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Secured Profitable Contracts
+                                        <span id="achievement-arrow-2017-1" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-1")}>▾</span>
                                     </span>
                                 </div>
-                                <div id="achievement2-2013" className="achievement-item"
-                                    data-panel="achievement2-panel-2013"
+                                <div id="achievement-content-2017-1" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Led the negotiation of multiple wind farm project contracts, ensuring favorable terms and maximizing profitability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement2-2017" className="achievement-item"
+                                    data-panel="achievement2-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Environmental engineering research on water systems
-                                        <span id="achievement2-arrow-2013" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Optimized Bidding Strategies
+                                        <span id="achievement-arrow-2017-2" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-2")}>▾</span>
                                     </span>
+                                </div>
+                                <div id="achievement-content-2017-2" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Developed and refined bidding strategies that integrated accurate cost inputs, financial modeling, and risk assessments, resulting in successful tender outcomes.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement3-2017" className="achievement-item"
+                                    data-panel="achievement3-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Enhanced Data-Driven Decision-Making
+                                        <span id="achievement-arrow-2017-3" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-3")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-3" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Implemented detailed pricing analyses and financial evaluations, enabling the leadership team to make informed decisions regarding project viability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement4-2017" className="achievement-item"
+                                    data-panel="achievement4-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Streamlined Approval Processes
+                                        <span id="achievement-arrow-2017-4" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-4")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-4" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Coordinated cross-functional reviews and internal approvals, reducing turnaround time and aligning stakeholders prior to Board engagement.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement5-2017" className="achievement-item"
+                                    data-panel="achievement5-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Improved Risk Management
+                                        <span id="achievement-arrow-2017-5" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-5")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-5" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Oversaw insurance and bonding arrangements, mitigating financial and operational risks while maintaining compliance with industry standards.</p>
+                                    </div>
                                 </div>
                                 <div className="achievements-bottom-line"></div>
                             </div>
 
-                            <div className="skills">
-                                <div className="skills-title">Skills <span className="info-icon">i</span></div>
+                            <div className="skills fixed bottom-0 rounded-b-[20px]">
+                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="timeline-card" data-year="2014" data-location="Colombia">
-                        <div className="compact-content" onClick={() => { setterCountry("Colombia"); selectCard(4); }}>
-                            <div className="year">2014</div>
-                            <div className="status">- 2018</div>
+                    <div className="timeline-card" data-year="2017" data-location="Australia">
+                        <div className="compact-content" onClick={() => { setterCountry("Australia"); selectCard(1); }}>
+                            <div className="year">2017</div>
+                            <div className="status">- 2019</div>
                             <div className="logo-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/1280px-PricewaterhouseCoopers_Logo.svg.png" alt="PwC Logo" className="image" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
                             </div>
-                            <div className="card-location">Bogotá, Colombia</div>
+                            <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/1280px-PricewaterhouseCoopers_Logo.svg.png" alt="Company Logo" className="logo" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
                                 <div className="year-container">
-                                    <div className="year">2014</div>
-                                    <div className="status">- 2018</div>
+                                    <div className="year">2017</div>
+                                    <div className="status">- 2019</div>
                                 </div>
                             </div>
 
                             <div className="role-container">
-                                <div id="director-role-2014" className="role" >
-                                    Manager <span id="role-arrow-2014" className="role-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div id="director-role-2017" className="role" >
+                                    Commercial and Contract Manager <span id="role-arrow-2017" className="role-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleRole(2017)}>▾</span>
                                 </div>
-                                <div className="department">Sustainable Energy and Climate Change Unit</div>
-                            </div>
-
-                            <div className="section">
-                                <div className="section-title-container">
-                                    <div className="section-title" >
-                                        Empathetic Leadership <span id="leadership-arrow-2014" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div className="department">of Wind Energy Projects.</div>
+                                <div id="role-content-2017" className="achievement-content">
+                                    <div className="ml-4">
+                                        <div className="panel-section">
+                                            <h4>What did I do?:</h4>
+                                            <p>Maximize the profitability and success of wind farm projects by overseeing commercial and contractual aspects, from bidding strategies and cost analysis to contract negotiation. Ensure alignment with organizational goals and compliance, supporting the Australian Sales Team to secure and deliver profitable, operationally sound projects.</p>
+                                        </div>
+                                        <div className="panel-section">
+                                            <h4>How did I do it?:</h4>
+                                            <p>I developed a comparative tool that standardized commercial metrics across potential projects. This innovation enabled the team and the Board of Directors to objectively assess and decide whether to proceed with the EPC contract for a given wind farm, ultimately strengthening the decision-making process.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="leadership-content-2014" className="leadership-content">
-                                    <p>Built a team of consultants focused on sustainability solutions, creating a collaborative environment for professional growth.</p>
                                 </div>
                             </div>
 
@@ -944,64 +1133,114 @@ export default function Carrusel({
                                         Achievements
                                     </div>
                                 </div>
-                                <div id="achievement1-2014" className="achievement-item"
-                                    data-panel="achievement1-panel-2014"
+                                <div id="achievement1-2017" className="achievement-item"
+                                    data-panel="achievement1-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Sustainability management for major corporate clients
-                                        <span id="achievement1-arrow-2014" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Secured Profitable Contracts
+                                        <span id="achievement-arrow-2017-1" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-1")}>▾</span>
                                     </span>
                                 </div>
-                                <div id="achievement2-2014" className="achievement-item"
-                                    data-panel="achievement2-panel-2014"
+                                <div id="achievement-content-2017-1" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Led the negotiation of multiple wind farm project contracts, ensuring favorable terms and maximizing profitability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement2-2017" className="achievement-item"
+                                    data-panel="achievement2-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Climate change initiatives for the energy sector
-                                        <span id="achievement2-arrow-2014" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Optimized Bidding Strategies
+                                        <span id="achievement-arrow-2017-2" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-2")}>▾</span>
                                     </span>
+                                </div>
+                                <div id="achievement-content-2017-2" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Developed and refined bidding strategies that integrated accurate cost inputs, financial modeling, and risk assessments, resulting in successful tender outcomes.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement3-2017" className="achievement-item"
+                                    data-panel="achievement3-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Enhanced Data-Driven Decision-Making
+                                        <span id="achievement-arrow-2017-3" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-3")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-3" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Implemented detailed pricing analyses and financial evaluations, enabling the leadership team to make informed decisions regarding project viability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement4-2017" className="achievement-item"
+                                    data-panel="achievement4-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Streamlined Approval Processes
+                                        <span id="achievement-arrow-2017-4" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-4")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-4" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Coordinated cross-functional reviews and internal approvals, reducing turnaround time and aligning stakeholders prior to Board engagement.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement5-2017" className="achievement-item"
+                                    data-panel="achievement5-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Improved Risk Management
+                                        <span id="achievement-arrow-2017-5" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-5")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-5" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Oversaw insurance and bonding arrangements, mitigating financial and operational risks while maintaining compliance with industry standards.</p>
+                                    </div>
                                 </div>
                                 <div className="achievements-bottom-line"></div>
                             </div>
 
-                            <div className="skills">
-                                <div className="skills-title">Skills <span className="info-icon">i</span></div>
+                            <div className="skills fixed bottom-0 rounded-b-[20px]">
+                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="timeline-card" data-year="2018" data-location="Colombia">
-                        <div className="compact-content" onClick={() => { setterCountry("Colombia"); selectCard(5); }}>
-                            <div className="year">2018</div>
-                            <div className="status">- 2020</div>
+                    <div className="timeline-card" data-year="2017" data-location="Australia">
+                        <div className="compact-content" onClick={() => { setterCountry("Australia"); selectCard(5); }}>
+                            <div className="year">2017</div>
+                            <div className="status">- 2019</div>
                             <div className="logo-container">
-                                <img src="https://static.wixstatic.com/media/871773_5a7b670470d84261a0db954f79aa82dd~mv2.jpg" alt="Integral Logo" className="image" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
                             </div>
-                            <div className="card-location">Medellín, Colombia</div>
+                            <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://static.wixstatic.com/media/871773_5a7b670470d84261a0db954f79aa82dd~mv2.jpg" alt="Company Logo" className="logo" />
+                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
                                 <div className="year-container">
-                                    <div className="year">2018</div>
-                                    <div className="status">- 2020</div>
+                                    <div className="year">2017</div>
+                                    <div className="status">- 2019</div>
                                 </div>
                             </div>
 
                             <div className="role-container">
-                                <div id="director-role-2018" className="role" >
-                                    Team Leader <span id="role-arrow-2018" className="role-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div id="director-role-2017" className="role" >
+                                    Commercial and Contract Manager <span id="role-arrow-2017" className="role-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleRole(2017)}>▾</span>
                                 </div>
-                                <div className="department">Environmental Impact Assessment</div>
-                            </div>
-
-                            <div className="section">
-                                <div className="section-title-container">
-                                    <div className="section-title" >
-                                        Empathetic Leadership <span id="leadership-arrow-2018" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                <div className="department">of Wind Energy Projects.</div>
+                                <div id="role-content-2017" className="achievement-content">
+                                    <div className="ml-4">
+                                        <div className="panel-section">
+                                            <h4>What did I do?:</h4>
+                                            <p>Maximize the profitability and success of wind farm projects by overseeing commercial and contractual aspects, from bidding strategies and cost analysis to contract negotiation. Ensure alignment with organizational goals and compliance, supporting the Australian Sales Team to secure and deliver profitable, operationally sound projects.</p>
+                                        </div>
+                                        <div className="panel-section">
+                                            <h4>How did I do it?:</h4>
+                                            <p>I developed a comparative tool that standardized commercial metrics across potential projects. This innovation enabled the team and the Board of Directors to objectively assess and decide whether to proceed with the EPC contract for a given wind farm, ultimately strengthening the decision-making process.</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="leadership-content-2018" className="leadership-content">
-                                    <p>Led a diverse team of environmental specialists working on international projects, developing cross-cultural leadership skills.</p>
                                 </div>
                             </div>
 
@@ -1011,33 +1250,82 @@ export default function Carrusel({
                                         Achievements
                                     </div>
                                 </div>
-                                <div id="achievement1-2018" className="achievement-item"
-                                    data-panel="achievement1-panel-2018"
+                                <div id="achievement1-2017" className="achievement-item"
+                                    data-panel="achievement1-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Environmental assessment for international projects
-                                        <span id="achievement1-arrow-2018" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Secured Profitable Contracts
+                                        <span id="achievement-arrow-2017-1" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-1")}>▾</span>
                                     </span>
                                 </div>
-                                <div id="achievement2-2018" className="achievement-item"
-                                    data-panel="achievement2-panel-2018"
+                                <div id="achievement-content-2017-1" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Led the negotiation of multiple wind farm project contracts, ensuring favorable terms and maximizing profitability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement2-2017" className="achievement-item"
+                                    data-panel="achievement2-panel-2017"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Team leadership across multiple countries
-                                        <span id="achievement2-arrow-2018" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Optimized Bidding Strategies
+                                        <span id="achievement-arrow-2017-2" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-2")}>▾</span>
                                     </span>
+                                </div>
+                                <div id="achievement-content-2017-2" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Developed and refined bidding strategies that integrated accurate cost inputs, financial modeling, and risk assessments, resulting in successful tender outcomes.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement3-2017" className="achievement-item"
+                                    data-panel="achievement3-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Enhanced Data-Driven Decision-Making
+                                        <span id="achievement-arrow-2017-3" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-3")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-3" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Implemented detailed pricing analyses and financial evaluations, enabling the leadership team to make informed decisions regarding project viability.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement4-2017" className="achievement-item"
+                                    data-panel="achievement4-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Streamlined Approval Processes
+                                        <span id="achievement-arrow-2017-4" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-4")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-4" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Coordinated cross-functional reviews and internal approvals, reducing turnaround time and aligning stakeholders prior to Board engagement.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement5-2017" className="achievement-item"
+                                    data-panel="achievement5-panel-2017"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Improved Risk Management
+                                        <span id="achievement-arrow-2017-5" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2017-5")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2017-5" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Oversaw insurance and bonding arrangements, mitigating financial and operational risks while maintaining compliance with industry standards.</p>
+                                    </div>
                                 </div>
                                 <div className="achievements-bottom-line"></div>
                             </div>
 
-                            <div className="skills">
-                                <div className="skills-title">Skills <span className="info-icon">i</span></div>
+                            <div className="skills fixed bottom-0 rounded-b-[20px]">
+                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="timeline-card active" data-year="2020" data-location="Australia">
-                        <div className="compact-content" onClick={() => { setterCountry("ColomAustraliabia"); selectCard(6); }}>
+                    <div className="timeline-card" data-year="2020" data-location="Australia">
+                        <div className="compact-content" onClick={() => { setterCountry("Australia"); selectCard(6); }}>
                             <div className="year">2019</div>
                             <div className="status">- 2021</div>
                             <div className="logo-container">
@@ -1226,7 +1514,7 @@ export default function Carrusel({
                                 </div>
                                 <div id="achievement-content-2021-2" className="achievement-content">
                                     <div className="panel-section">
-                                        <p>Successfully led the implementation of the Climate Finance Accelerator In collaboration with the PwC UK team, the Climate Finance Accelerator program aims to unlock financing for <span className="blue-text">low-carbon projects in middle-income countries</span> across Africa, Asia, and Latin America. It is a technical assistance program funded by International Climate Finance (ICF) through the UK government Department for Energy Security and Net Zero (DESNZ). In Colombia, we were able to support <span className="blue-text">25 projects with a value of investment of US $ 76 MM</span>.</p>
+                                        <p>As a Project Fellow at the World Economic Forum's Centre for Climate and Nature, I made significant contributions to the Carbon Market Innovation Initiative and the Centre’s broader activities. From the very outset of this initiative, I played a key role in advising stakeholders across industry and government, successfully leading the strategy, purpose, and business model for implementing Article 6 of the Paris Agreement.</p>
                                     </div>
                                 </div>
                                 <div id="achievement3-2021" className="achievement-item"
@@ -1234,8 +1522,13 @@ export default function Carrusel({
                                 >
                                     <span className="achievement-bullet">•</span>
                                     <span className="achievement-text">Building a team and creating new services
-                                        <span id="achievement3-arrow-2021" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                        <span id="achievement3-arrow-2021" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2021-3")}>▾</span>
                                     </span>
+                                </div>
+                                <div id="achievement-content-2021-3" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Built and led a team of 15 consultants to develop seven lines of service: (1) Tax Incentives, (2) Carbon Markets, (3) Decarbonization Strategies, (4) Climate Risk Strategy, (5) Climate Finance, (6) Environmental Due Diligence, and (7) Sustainability and GHG Reporting Assurance.</p>
+                                    </div>
                                 </div>
                                 <div className="achievements-bottom-line"></div>
                             </div>
