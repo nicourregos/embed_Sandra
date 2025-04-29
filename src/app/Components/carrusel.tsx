@@ -14,8 +14,6 @@ export default function Carrusel({
     const [index, setIndex] = useState(7);
     let isAnimating = false;
     const FIXED_POSITION = 4;
-    let initialLoad = true; // Flag to track initial load
-    const CLONES_PER_SIDE = 4; // Number of clones to add on each side for infinite scrolling
 
     useEffect(() => {
         selectCard(7)
@@ -93,7 +91,6 @@ export default function Carrusel({
 
         setTimeout(() => {
             selectCard(index, true);
-            initialLoad = false;
         }, 100);
     }
 
@@ -104,9 +101,6 @@ export default function Carrusel({
 
         // Closing any open panels first
         resetExpandedElements();
-
-        // Storing previous active index for reference
-        const previousIndex = index;
 
         // Getting all original cards (not clones)
         const originalCards = document.querySelectorAll('.timeline-card:not(.clone)') as NodeListOf<HTMLElement>;
@@ -170,9 +164,7 @@ export default function Carrusel({
         setIndex(newIndex);
     }
 
-    function applyBlurredEffect(cards: any[] | NodeListOf<HTMLElement>) {
-        // We want cards that are far from the active card to be blurred
-        const totalCards = cards.length;
+    function applyBlurredEffect(cards: NodeListOf<HTMLElement>) {
 
         cards.forEach((card, subindex) => {
             const distance = Math.abs(subindex - index);
@@ -273,7 +265,160 @@ export default function Carrusel({
         window.addEventListener('scroll', function () {
             adjustArrowsPosition();
         });
-    }, [window]);
+        // Adding global click handler to close panels when clicking outside
+        document.addEventListener('click', function (event) {
+            const activeCard = document.querySelector('.timeline-card.active');
+            if (!activeCard) return;
+
+            const year = activeCard.getAttribute('data-year');
+            const e = event.target as Element
+
+            if (!e?.closest('.expandable-panel') &&
+                !e?.closest('.role') &&
+                !e?.closest('.section-title') &&
+                !e?.closest('.achievement-item')) {
+
+                if (!e?.closest('.role')) {
+                    const roleBox = document.getElementById(`director-role-${year}`);
+                    const roleArrow = document.getElementById(`role-arrow-${year}`);
+                    const rolePanel = document.getElementById(`role-details-panel-${year}`);
+
+                    if (roleBox) roleBox.classList.remove('expanded');
+                    if (roleArrow) roleArrow.classList.add('right');
+                    if (rolePanel) rolePanel.classList.remove('active');
+                }
+
+                if (!e.closest('.section-title')) {
+                    const leadershipContent = document.getElementById(`leadership-content-${year}`);
+                    const leadershipArrow = document.getElementById(`leadership-arrow-${year}`);
+
+                    if (leadershipContent) leadershipContent.classList.remove('expanded');
+                    if (leadershipArrow) leadershipArrow.classList.add('right');
+                }
+
+                document.querySelectorAll(`.achievement-item[id*="-${year}"]`).forEach(item => {
+                    item.classList.remove('active');
+                    (item as HTMLElement).style.marginTop = '';
+                    (item as HTMLElement).style.marginBottom = '';
+                });
+
+                document.querySelectorAll(`.achievement-item[id*="-${year}"] .section-title-arrow`).forEach(arrow => {
+                    arrow.classList.add('right');
+                });
+
+                document.querySelectorAll(`.expandable-panel[id*="-${year}"]`).forEach(panel => {
+                    if (panel.id !== `role-details-panel-${year}` && panel.id !== `leadership-panel-${year}`) {
+                        panel.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Initializing everything when the document is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            initTimeline();
+            initializeAllLeadershipSections();
+
+            // Making toggle functions available globally
+            /* window.toggleRole = toggleRole;
+            window.toggleLeadership = toggleLeadership;
+            window.toggleAchievement = toggleAchievement;
+            window.positionPanelWithAchievement = positionPanelWithAchievement;
+            window.checkAndAdjustPanelOverlaps = checkAndAdjustPanelOverlaps;
+            window.validateAllPanelPositions = validateAllPanelPositions; */
+        });
+
+        // Adding CSS directly in JavaScript to ensure proper transitions
+        document.addEventListener('DOMContentLoaded', function () {
+            // Creating a style element
+            const style = document.createElement('style');
+
+            // Adding custom animation styles
+            style.textContent = `
+            .timeline-card {
+                transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                            opacity 0.5s ease-in-out;
+            }
+            
+            .timeline-card.active {
+                opacity: 1;
+                transform: scale(1.2);
+                z-index: 30;
+                height: auto;
+            }
+            
+            .timeline-card:not(.active) {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            
+            .timeline-card:not(.active):hover {
+                opacity: 0.9;
+                transform: scale(1.05);
+                transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                            opacity 0.3s ease-in-out;
+            }
+            
+            .timeline-card.blurred {
+                opacity: 0.3;
+            }
+            
+            .detailed-content {
+                transition: opacity 0.5s ease-in-out;
+            }
+            
+            / * Clone card styles * /
+            .timeline-card.clone {
+                opacity: 0.7;
+            }
+            
+            / * Improved arrow buttons * /
+            .scroll-arrow {
+                transform: translateY(-50%);
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            
+            .scroll-arrow:hover {
+                background-color: #003380;
+                transform: translateY(-50%) scale(1.1);
+            }
+            
+            .scroll-arrow:active {
+                transform: translateY(-50%) scale(0.95);
+            }
+            
+            /* Expandable panel animation and positioning improvements * /
+            .expandable-panel {
+                transition: opacity 0.5s ease-in-out, visibility 0.5s, top 0.5s ease;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 0;
+            }
+            
+            .expandable-panel.active {
+                opacity: 1;
+                visibility: visible;
+                z-index: 20;
+            }
+            
+            .achievement-item {
+                transition: margin-top 0.3s ease, margin-bottom 0.3s ease;
+            }
+            
+            .achievement-item.active .achievement-text {
+                margin-top: 80px;
+                margin-bottom: 80px;
+            }
+            
+            .achievement-item.active .achievement-bullet {
+                margin-top: 80px;
+                margin-bottom: 80px;
+            }
+        `;
+
+            document.head.appendChild(style);
+        });
+    }, []);
 
     function adjustArrowsPosition() {
         // Finding the active card's center
@@ -378,8 +523,6 @@ export default function Carrusel({
                 // Adding explicit click handler to ensure it works
                 const titleElement = document.querySelector(`.section-title[]`);
                 if (titleElement) {
-                    // Removing the inline onclick to avoid double-firing
-                    const onclickAttr = titleElement.getAttribute('onclick');
                     titleElement.removeAttribute('onclick');
 
                     // Add event listener directly
@@ -391,7 +534,7 @@ export default function Carrusel({
         });
     }
 
-    function toggleAchievement(panelId: string, arrowId: string, itemId: string) {
+    /* function toggleAchievement(panelId: string, arrowId: string, itemId: string) {
         const arrow = document.getElementById(arrowId);
         const achievementItem = document.getElementById(itemId);
         const panel = document.getElementById(panelId);
@@ -439,23 +582,7 @@ export default function Carrusel({
                 card.style.minHeight = Math.max(553, cardHeight) + 'px';
             }, 300);
         }
-    }
-
-    function positionPanelWithAchievement(panel: HTMLElement, achievementItem: HTMLElement) {
-        setTimeout(() => {
-            const itemRect = achievementItem.getBoundingClientRect();
-            const cardRect = achievementItem?.closest('.timeline-card')?.getBoundingClientRect();
-            const centerY = itemRect.top + (itemRect.height / 2) - (cardRect?.top ?? 0);
-            panel.style.top = `${centerY - (panel.offsetHeight / 2)}px`;
-
-            const panelTop = parseInt(panel.style.top);
-            if (panelTop < 0) {
-                panel.style.top = '20px';
-            }
-
-            checkAndAdjustPanelOverlaps();
-        }, 150);
-    }
+    } */
 
     function checkAndAdjustPanelOverlaps() {
         const activePanels = Array.from(document.querySelectorAll('.expandable-panel.active'))
@@ -497,168 +624,6 @@ export default function Carrusel({
         checkAndAdjustPanelOverlaps();
         setTimeout(checkAndAdjustPanelOverlaps, 50);
     }
-
-    // window resize
-    window.addEventListener('resize', () => {
-        // Reposition timeline without animation
-        moveTimelineToPosition(true);
-        adjustArrowsPosition();
-        validateAllPanelPositions();
-    });
-
-    // Adding global click handler to close panels when clicking outside
-    document.addEventListener('click', function (event) {
-        const activeCard = document.querySelector('.timeline-card.active');
-        if (!activeCard) return;
-
-        const year = activeCard.getAttribute('data-year');
-        const e = event.target as Element
-
-        if (!e?.closest('.expandable-panel') &&
-            !e?.closest('.role') &&
-            !e?.closest('.section-title') &&
-            !e?.closest('.achievement-item')) {
-
-            if (!e?.closest('.role')) {
-                const roleBox = document.getElementById(`director-role-${year}`);
-                const roleArrow = document.getElementById(`role-arrow-${year}`);
-                const rolePanel = document.getElementById(`role-details-panel-${year}`);
-
-                if (roleBox) roleBox.classList.remove('expanded');
-                if (roleArrow) roleArrow.classList.add('right');
-                if (rolePanel) rolePanel.classList.remove('active');
-            }
-
-            if (!e.closest('.section-title')) {
-                const leadershipContent = document.getElementById(`leadership-content-${year}`);
-                const leadershipArrow = document.getElementById(`leadership-arrow-${year}`);
-
-                if (leadershipContent) leadershipContent.classList.remove('expanded');
-                if (leadershipArrow) leadershipArrow.classList.add('right');
-            }
-
-            document.querySelectorAll(`.achievement-item[id*="-${year}"]`).forEach(item => {
-                item.classList.remove('active');
-                (item as HTMLElement).style.marginTop = '';
-                (item as HTMLElement).style.marginBottom = '';
-            });
-
-            document.querySelectorAll(`.achievement-item[id*="-${year}"] .section-title-arrow`).forEach(arrow => {
-                arrow.classList.add('right');
-            });
-
-            document.querySelectorAll(`.expandable-panel[id*="-${year}"]`).forEach(panel => {
-                if (panel.id !== `role-details-panel-${year}` && panel.id !== `leadership-panel-${year}`) {
-                    panel.classList.remove('active');
-                }
-            });
-        }
-    });
-
-    // Initializing everything when the document is ready
-    document.addEventListener('DOMContentLoaded', () => {
-        initTimeline();
-        initializeAllLeadershipSections();
-
-        // Making toggle functions available globally
-        /* window.toggleRole = toggleRole;
-        window.toggleLeadership = toggleLeadership;
-        window.toggleAchievement = toggleAchievement;
-        window.positionPanelWithAchievement = positionPanelWithAchievement;
-        window.checkAndAdjustPanelOverlaps = checkAndAdjustPanelOverlaps;
-        window.validateAllPanelPositions = validateAllPanelPositions; */
-    });
-
-    // Adding CSS directly in JavaScript to ensure proper transitions
-    document.addEventListener('DOMContentLoaded', function () {
-        // Creating a style element
-        const style = document.createElement('style');
-
-        // Adding custom animation styles
-        style.textContent = `
-            .timeline-card {
-                transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                            opacity 0.5s ease-in-out;
-            }
-            
-            .timeline-card.active {
-                opacity: 1;
-                transform: scale(1.2);
-                z-index: 30;
-                height: auto;
-            }
-            
-            .timeline-card:not(.active) {
-                opacity: 0.7;
-                transform: scale(1);
-            }
-            
-            .timeline-card:not(.active):hover {
-                opacity: 0.9;
-                transform: scale(1.05);
-                transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                            opacity 0.3s ease-in-out;
-            }
-            
-            .timeline-card.blurred {
-                opacity: 0.3;
-            }
-            
-            .detailed-content {
-                transition: opacity 0.5s ease-in-out;
-            }
-            
-            / * Clone card styles * /
-            .timeline-card.clone {
-                opacity: 0.7;
-            }
-            
-            / * Improved arrow buttons * /
-            .scroll-arrow {
-                transform: translateY(-50%);
-                transition: background-color 0.3s ease, transform 0.2s ease;
-            }
-            
-            .scroll-arrow:hover {
-                background-color: #003380;
-                transform: translateY(-50%) scale(1.1);
-            }
-            
-            .scroll-arrow:active {
-                transform: translateY(-50%) scale(0.95);
-            }
-            
-            /* Expandable panel animation and positioning improvements * /
-            .expandable-panel {
-                transition: opacity 0.5s ease-in-out, visibility 0.5s, top 0.5s ease;
-                opacity: 0;
-                visibility: hidden;
-                z-index: 0;
-            }
-            
-            .expandable-panel.active {
-                opacity: 1;
-                visibility: visible;
-                z-index: 20;
-            }
-            
-            .achievement-item {
-                transition: margin-top 0.3s ease, margin-bottom 0.3s ease;
-            }
-            
-            .achievement-item.active .achievement-text {
-                margin-top: 80px;
-                margin-bottom: 80px;
-            }
-            
-            .achievement-item.active .achievement-bullet {
-                margin-top: 80px;
-                margin-bottom: 80px;
-            }
-        `;
-
-        document.head.appendChild(style);
-    });
 
     return (
         <>
@@ -1009,13 +974,13 @@ export default function Carrusel({
                             <div className="year">2018</div>
                             <div className="status">- 2020</div>
                             <div className="logo-container">
-                                <img src="https://www.integral.com.co/images/LOGO-INTEGRAL-COLOR.png" alt="Integral Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/871773_5a7b670470d84261a0db954f79aa82dd~mv2.jpg" alt="Integral Logo" className="image" />
                             </div>
                             <div className="card-location">Medellín, Colombia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://www.integral.com.co/images/LOGO-INTEGRAL-COLOR.png" alt="Company Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/871773_5a7b670470d84261a0db954f79aa82dd~mv2.jpg" alt="Company Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2018</div>
                                     <div className="status">- 2020</div>
@@ -1071,9 +1036,9 @@ export default function Carrusel({
                         </div>
                     </div>
 
-                    <div className="timeline-card" data-year="2020" data-location="Australia">
-                        <div className="compact-content" onClick={() => { setterCountry("Australia"); selectCard(6); }}>
-                            <div className="year">2020</div>
+                    <div className="timeline-card active" data-year="2020" data-location="Australia">
+                        <div className="compact-content" onClick={() => { setterCountry("ColomAustraliabia"); selectCard(6); }}>
+                            <div className="year">2019</div>
                             <div className="status">- 2021</div>
                             <div className="logo-container">
                                 <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
@@ -1084,22 +1049,33 @@ export default function Carrusel({
                             <div className="card-header">
                                 <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
                                 <div className="year-container">
-                                    <div className="year">2020</div>
+                                    <div className="year">2019</div>
                                     <div className="status">- 2021</div>
                                 </div>
                             </div>
 
                             <div className="role-container">
                                 <div id="director-role-2020" className="role" >
-                                    Commercial Manager <span id="role-arrow-2020" className="role-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    Sr. Development Manager <span id="role-arrow-2020" className="role-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleRole(2020)}>▾</span>
                                 </div>
-                                <div className="department">Wind Energy Division</div>
+                                <div className="department">of the Wind Energy Division.</div>
+                                <div id="role-content-2020" className="achievement-content">
+                                    <div className="ml-4">
+                                        <div className="panel-section">
+                                            <h4>What did I do?:</h4>
+                                            <p>I oversaw the successful delivery of Hills of Gold Wind Farm, ensuring effective management of timelines, budgets, community engagement, technical development, and compliance with environmental and regulatory requirements, while supporting the growth of the team and facilitating capital raising efforts.</p>
+                                        </div>
+                                        <div className="panel-section">
+                                            <h4>How did I do it?:</h4>
+                                            <p>I’m particularly proud of my contribution to designing the project layout in a way that minimized biodiversity impacts while maximizing energy output. This involved working closely with civil engineers, surveyors, and wind specialists, carefully integrating geological and topographical data to achieve the optimal layout for the wind farm.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
                             <div className="section">
                                 <div className="section-title-container">
                                     <div className="section-title" >
-                                        Empathetic Leadership <span id="leadership-arrow-2020" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                        Empathetic Leadership <span id="leadership-arrow-2020" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2020)}>▾</span>
                                     </div>
                                 </div>
                                 <div id="leadership-content-2020" className="leadership-content">
@@ -1117,23 +1093,59 @@ export default function Carrusel({
                                     data-panel="achievement1-panel-2020"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Wind energy development across the Australian market
-                                        <span id="achievement1-arrow-2020" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Led All Technical Studies
+                                        <span id="achievement-arrow-2020-1" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2020-1")}>▾</span>
                                     </span>
+                                </div>
+                                <div id="achievement-content-2020-1" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Oversaw and coordinated all technical studies for the wind farm, including site assessments, engineering evaluations, and feasibility analyses, ensuring accurate data and adherence to best practices.</p>
+                                    </div>
                                 </div>
                                 <div id="achievement2-2020" className="achievement-item"
                                     data-panel="achievement2-panel-2020"
                                 >
                                     <span className="achievement-bullet">•</span>
-                                    <span className="achievement-text">Commercial contract management for renewable projects
-                                        <span id="achievement2-arrow-2020" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span>
+                                    <span className="achievement-text">Strengthened Community Engagement
+                                        <span id="achievement-arrow-2020-2" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2020-2")}>▾</span>
                                     </span>
+                                </div>
+                                <div id="achievement-content-2020-2" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Developed and implemented comprehensive communication strategies with community manager, fostering positive relationships and support for project initiatives.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement3-2020" className="achievement-item"
+                                    data-panel="achievement3-panel-2020"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Streamlined Technical and Regulatory Processes
+                                        <span id="achievement-arrow-2020-3" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2020-3")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2020-3" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Provided technical oversight and coordinated environmental impact assessments to comply with State Environmental Assessment Requirements (SEARs), expediting approvals and ensuring on-time project milestones.</p>
+                                    </div>
+                                </div>
+                                <div id="achievement4-2020" className="achievement-item"
+                                    data-panel="achievement4-panel-2020"
+                                >
+                                    <span className="achievement-bullet">•</span>
+                                    <span className="achievement-text">Optimized Procurement and Capital-Raising Efforts
+                                        <span id="achievement-arrow-2020-4" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2020-4")}>▾</span>
+                                    </span>
+                                </div>
+                                <div id="achievement-content-2020-4" className="achievement-content">
+                                    <div className="panel-section">
+                                        <p>Managed the wind turbine procurement process, negotiated contracts to reduce overall costs, and supported capital-raising activities by providing critical project information for due diligence.</p>
+                                    </div>
                                 </div>
                                 <div className="achievements-bottom-line"></div>
                             </div>
 
-                            <div className="skills">
-                                <div className="skills-title">Skills <span className="info-icon">i</span></div>
+                            <div className="skills fixed bottom-0 rounded-b-[20px]">
+                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
                             </div>
                         </div>
                     </div>
@@ -1201,7 +1213,7 @@ export default function Carrusel({
                                 </div>
                                 <div id="achievement-content-2021-1" className="achievement-content">
                                     <div className="panel-section">
-                                        <p>Successfully led the implementation of the Climate Finance Accelerator In collaboration with the PwC UK team, the Climate Finance Accelerator program aims to unlock financing for <span className="blue-text">low-carbon projects in middle-income countries</span> across Africa, Asia, and Latin America. It is a technical assistance program funded by International Climate Finance (ICF) through the UK government's Department for Energy Security and Net Zero (DESNZ). In Colombia, we were able to support <span className="blue-text">25 projects with a value of investment of US $ 76 MM</span>.</p>
+                                        <p>Successfully led the implementation of the Climate Finance Accelerator In collaboration with the PwC UK team, the Climate Finance Accelerator program aims to unlock financing for <span className="blue-text">low-carbon projects in middle-income countries</span> across Africa, Asia, and Latin America. It is a technical assistance program funded by International Climate Finance (ICF) through the UK government{"'"}s Department for Energy Security and Net Zero (DESNZ). In Colombia, we were able to support <span className="blue-text">25 projects with a value of investment of US $ 76 MM</span>.</p>
                                     </div>
                                 </div>
                                 <div id="achievement2-2021" className="achievement-item"
@@ -1214,7 +1226,7 @@ export default function Carrusel({
                                 </div>
                                 <div id="achievement-content-2021-2" className="achievement-content">
                                     <div className="panel-section">
-                                        <p>Successfully led the implementation of the Climate Finance Accelerator In collaboration with the PwC UK team, the Climate Finance Accelerator program aims to unlock financing for <span className="blue-text">low-carbon projects in middle-income countries</span> across Africa, Asia, and Latin America. It is a technical assistance program funded by International Climate Finance (ICF) through the UK government's Department for Energy Security and Net Zero (DESNZ). In Colombia, we were able to support <span className="blue-text">25 projects with a value of investment of US $ 76 MM</span>.</p>
+                                        <p>Successfully led the implementation of the Climate Finance Accelerator In collaboration with the PwC UK team, the Climate Finance Accelerator program aims to unlock financing for <span className="blue-text">low-carbon projects in middle-income countries</span> across Africa, Asia, and Latin America. It is a technical assistance program funded by International Climate Finance (ICF) through the UK government Department for Energy Security and Net Zero (DESNZ). In Colombia, we were able to support <span className="blue-text">25 projects with a value of investment of US $ 76 MM</span>.</p>
                                     </div>
                                 </div>
                                 <div id="achievement3-2021" className="achievement-item"
@@ -1228,7 +1240,7 @@ export default function Carrusel({
                                 <div className="achievements-bottom-line"></div>
                             </div>
 
-                            <div className="skills">
+                            <div className="skills fixed bottom-0 rounded-b-[20px]">
                                 <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
                             </div>
                         </div>

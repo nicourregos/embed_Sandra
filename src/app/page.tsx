@@ -1,8 +1,6 @@
 "use client"
-import Image from "next/image";
 import World from "./Components/world";
-import { useEffect, useState } from "react";
-import Card from "./Components/card";
+import { useState } from "react";
 import Carrusel from "./Components/carrusel";
 
 export default function Home() {
@@ -28,12 +26,6 @@ export default function Home() {
     <>
       <section className="absolute w-full h-full">
         <World coordinates={currentPos} rotation={currentRot}></World>
-      </section>
-      <section className="absolute w-full z-20">
-        <div className="professional-path-container">
-          <h1 className="professional-path-title">Professional path</h1>
-          <p className="professional-path-subtitle">Environmental Sustainability Leader. With 20 years of experience, Sandra has driven comprehensive sustainability, ESG, and climate strategies across global markets.</p>
-        </div>
       </section>
       <section className="relative w-full h-screen content-center z-0">
         <Carrusel setterCountry={setCountry}></Carrusel>

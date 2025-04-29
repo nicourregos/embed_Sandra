@@ -258,14 +258,18 @@ body {
 }
 
 .skills {
-  width: 100%;
+  width: 364px;
   margin-top: 0px;
-  position: relative;
-  bottom: 20px;
+  padding-bottom: 20px;
   display: flex;
-  padding-left: 15px;
+  margin-left: -20px;
+  padding-left: 35px;
   padding-right: 15px;
   align-items: center;
+  background: #ffffff88;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
 }
 
 .skills-title {
