@@ -1514,7 +1514,7 @@ export default function Carrusel({
                                 </div>
                                 <div id="achievement-content-2021-2" className="achievement-content">
                                     <div className="panel-section">
-                                        <p>As a Project Fellow at the World Economic Forum's Centre for Climate and Nature, I made significant contributions to the Carbon Market Innovation Initiative and the Centre’s broader activities. From the very outset of this initiative, I played a key role in advising stakeholders across industry and government, successfully leading the strategy, purpose, and business model for implementing Article 6 of the Paris Agreement.</p>
+                                        <p>As a Project Fellow at the World Economic Forum{"'"}s Centre for Climate and Nature, I made significant contributions to the Carbon Market Innovation Initiative and the Centre{"'"}s broader activities. From the very outset of this initiative, I played a key role in advising stakeholders across industry and government, successfully leading the strategy, purpose, and business model for implementing Article 6 of the Paris Agreement.</p>
                                     </div>
                                 </div>
                                 <div id="achievement3-2021" className="achievement-item"
