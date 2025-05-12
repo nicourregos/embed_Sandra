@@ -640,13 +640,13 @@ export default function Carrusel({
                             <div className="year">2001</div>
                             <div className="status">- 2005</div>
                             <div className="logo-container">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/871773_67daa29cdf9b488389d9c6c387888e65~mv2.png" alt="UPB Logo" className="image" />
                             </div>
                             <div className="card-location">Medellín, Colombia </div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/871773_67daa29cdf9b488389d9c6c387888e65~mv2.png" alt="UPB Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2001</div>
                                     <div className="status">- 2005</div>
@@ -744,13 +744,13 @@ export default function Carrusel({
                             <div className="year">2005</div>
                             <div className="status">- 2006</div>
                             <div className="logo-container">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="UPR Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/23a99f_1153e822d6cc486b91a352390420d9ce~mv2.png" alt="UPR Logo" className="image" />
                             </div>
                             <div className="card-location">Mayaguez, Puerto Rico</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="UPR Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/23a99f_1153e822d6cc486b91a352390420d9ce~mv2.png" alt="UPR Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2005</div>
                                     <div className="status">- 2006</div>
@@ -835,13 +835,13 @@ export default function Carrusel({
                             <div className="year">2007</div>
                             <div className="status">- 2010</div>
                             <div className="logo-container">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="KSU Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/23a99f_95af517d7cbf41af9643ced85079d964~mv2.png" alt="KSU Logo" className="image" />
                             </div>
                             <div className="card-location">Manhattan, Kansas, United States</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="KSU Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/23a99f_95af517d7cbf41af9643ced85079d964~mv2.png" alt="KSU Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2007</div>
                                     <div className="status">- 2010</div>
@@ -939,13 +939,13 @@ export default function Carrusel({
                             <div className="year">2010</div>
                             <div className="status">- 2011</div>
                             <div className="logo-container">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="JHU Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/871773_8ab7bb6fd7d04ea68ceddfe856de17e9~mv2.png" alt="JHU Logo" className="image" />
                             </div>
                             <div className="card-location">Baltimore, United States</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="JHU Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/871773_8ab7bb6fd7d04ea68ceddfe856de17e9~mv2.png" alt="JHU Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2010</div>
                                     <div className="status">- 2011</div>
@@ -1043,13 +1043,13 @@ export default function Carrusel({
                             <div className="year">2012</div>
                             <div className="status">- 2013</div>
                             <div className="logo-container">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="UdeM Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/871773_ea7353bbc8e149389722fffc3198d3bd~mv2.png" alt="UdeM Logo" className="image" />
                             </div>
                             <div className="card-location">Medellin, Colombia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="UdeM Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/871773_ea7353bbc8e149389722fffc3198d3bd~mv2.png" alt="UdeM Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2012</div>
                                     <div className="status">- 2013</div>
@@ -1147,13 +1147,13 @@ export default function Carrusel({
                             <div className="year">2013</div>
                             <div className="status">- 2014</div>
                             <div className="logo-container">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Integral Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/23a99f_06acb0576ac4435d90f10ff7c0e44fe6~mv2.png" alt="Integral Logo" className="image" />
                             </div>
                             <div className="card-location">Medellin, Colombia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Integral Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/23a99f_06acb0576ac4435d90f10ff7c0e44fe6~mv2.png" alt="Integral Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2013</div>
                                     <div className="status">- 2014</div>
@@ -1251,13 +1251,13 @@ export default function Carrusel({
                             <div className="year">2014</div>
                             <div className="status">- 2017</div>
                             <div className="logo-container">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="PwC Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="PwC Logo" className="image" />
                             </div>
                             <div className="card-location">Bogota, Colombia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="PwC Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="PwC Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2014</div>
                                     <div className="status">- 2017</div>
@@ -1355,13 +1355,13 @@ export default function Carrusel({
                             <div className="year">2017</div>
                             <div className="status">- 2019</div>
                             <div className="logo-container">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Senvion Logo" className="image" />
                             </div>
                             <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Company Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2017</div>
                                     <div className="status">- 2019</div>
@@ -1472,13 +1472,13 @@ export default function Carrusel({
                             <div className="year">2019</div>
                             <div className="status">- 2021</div>
                             <div className="logo-container">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Senvion Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Senvion Logo" className="image" />
                             </div>
                             <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://seeklogo.com/images/S/senvion-logo-BE1D4C3A2E-seeklogo.com.png" alt="Company Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Company Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2019</div>
                                     <div className="status">- 2021</div>
@@ -1586,13 +1586,13 @@ export default function Carrusel({
                             <div className="year">2021</div>
                             <div className="status">- current</div>
                             <div className="logo-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Logo-pwc.png" alt="PwC Logo" className="image" />
+                                <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="PwC Logo" className="image" />
                             </div>
                             <div className="card-location">Bogotá, Colombia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Logo-pwc.png" alt="Company Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="Company Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2021</div>
                                     <div className="status">- current</div>
