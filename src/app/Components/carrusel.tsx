@@ -746,7 +746,7 @@ export default function Carrusel({
                             <div className="logo-container my-10">
                                 <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Company Logo" className="w-5/6" />
                             </div>
-                            <div className="card-location mb-4">Director</div>
+                            <div className="card-location mb-4">Sr. Development Manager</div>
                             <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
@@ -858,9 +858,10 @@ export default function Carrusel({
                         <div className="compact-content" onClick={() => { selectCard(2); }}>
                             <div className="year">2017</div>
                             <div className="status">- 2019</div>
-                            <div className="logo-container">
-                                <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Senvion Logo" className="image" />
+                            <div className="logo-container my-10">
+                                <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Company Logo" className="w-5/6" />
                             </div>
+                            <div className="card-location mb-4">Commercial and Contract Manager</div>
                             <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
@@ -975,9 +976,10 @@ export default function Carrusel({
                         <div className="compact-content" onClick={() => { selectCard(3); }}>
                             <div className="year">2014</div>
                             <div className="status">- 2017</div>
-                            <div className="logo-container">
-                                <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="PwC Logo" className="image" />
+                            <div className="logo-container my-6">
+                                <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="Company Logo" className="w-4/6" />
                             </div>
+                            <div className="card-location mb-4">Manager</div>
                             <div className="card-location">Bogota, Colombia</div>
                         </div>
                         <div className="detailed-content">
@@ -1079,9 +1081,10 @@ export default function Carrusel({
                         <div className="compact-content" onClick={() => { selectCard(4); }}>
                             <div className="year">2013</div>
                             <div className="status">- 2014</div>
-                            <div className="logo-container">
-                                <img src="https://static.wixstatic.com/media/23a99f_06acb0576ac4435d90f10ff7c0e44fe6~mv2.png" alt="Integral Logo" className="image" />
+                            <div className="logo-container my-8">
+                                <img src="https://static.wixstatic.com/media/23a99f_06acb0576ac4435d90f10ff7c0e44fe6~mv2.png" alt="Integral Logo" className="w-4/6" />
                             </div>
+                            <div className="card-location mb-4">Team Leader</div>
                             <div className="card-location">Medellin, Colombia</div>
                         </div>
                         <div className="detailed-content">
@@ -1183,9 +1186,10 @@ export default function Carrusel({
                         <div className="compact-content" onClick={() => { selectCard(5); }}>
                             <div className="year">2012</div>
                             <div className="status">- 2013</div>
-                            <div className="logo-container">
-                                <img src="https://static.wixstatic.com/media/871773_ea7353bbc8e149389722fffc3198d3bd~mv2.png" alt="UdeM Logo" className="image" />
+                            <div className="logo-container my-10">
+                                <img src="https://static.wixstatic.com/media/871773_ea7353bbc8e149389722fffc3198d3bd~mv2.png" alt="UdeM Logo" className="w-4/6" />
                             </div>
+                            <div className="card-location mb-4">Assistant Professor</div>
                             <div className="card-location">Medellin, Colombia</div>
                         </div>
                         <div className="detailed-content">
@@ -1392,9 +1396,10 @@ export default function Carrusel({
                         <div className="compact-content" onClick={() => { selectCard(7); }}>
                             <div className="year">2007</div>
                             <div className="status">- 2010</div>
-                            <div className="logo-container">
-                                <img src="https://static.wixstatic.com/media/23a99f_95af517d7cbf41af9643ced85079d964~mv2.png" alt="KSU Logo" className="image" />
+                            <div className="logo-container my-12">
+                                <img src="https://static.wixstatic.com/media/23a99f_95af517d7cbf41af9643ced85079d964~mv2.png" alt="KSU Logo" className="w-4/6" />
                             </div>
+                            <div className="card-location mb-9">Graduate Research Assistant</div>
                             <div className="card-location">Manhattan, Kansas, United States</div>
                         </div>
                         <div className="detailed-content">
@@ -1496,9 +1501,10 @@ export default function Carrusel({
                         <div className="compact-content" onClick={() => { selectCard(8); }}>
                             <div className="year">2005</div>
                             <div className="status">- 2006</div>
-                            <div className="logo-container">
-                                <img src="https://static.wixstatic.com/media/23a99f_1153e822d6cc486b91a352390420d9ce~mv2.png" alt="UPR Logo" className="image" />
+                            <div className="logo-container my-10">
+                                <img src="https://static.wixstatic.com/media/23a99f_1153e822d6cc486b91a352390420d9ce~mv2.png" alt="UPR Logo" className="w-4/6" />
                             </div>
+                            <div className="card-location mb-4">Research Assistant</div>
                             <div className="card-location">Mayaguez, Puerto Rico</div>
                         </div>
                         <div className="detailed-content">
@@ -1587,10 +1593,11 @@ export default function Carrusel({
                         <div className="compact-content" onClick={() => { selectCard(9); }}>
                             <div className="year">2001</div>
                             <div className="status">- 2005</div>
-                            <div className="logo-container">
-                                <img src="https://static.wixstatic.com/media/871773_67daa29cdf9b488389d9c6c387888e65~mv2.png" alt="UPB Logo" className="image" />
+                            <div className="logo-container my-8">
+                                <img src="https://static.wixstatic.com/media/871773_67daa29cdf9b488389d9c6c387888e65~mv2.png" alt="UPB Logo" className="w-4/6" />
                             </div>
-                            <div className="card-location">Medellín, Colombia </div>
+                            <div className="card-location mb-4">Junior Research Engineer</div>
+                            <div className="card-location">Medellín, Colombia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">

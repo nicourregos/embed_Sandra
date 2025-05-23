@@ -16,7 +16,7 @@ function MeshComponent({ coordinates, rotation }: Props) {
     const mesh = useRef<Mesh>(null!);
     const gltf = useLoader(GLTFLoader, fileUrl);
     gltf.scene.scale.set(3, 3, 3);
-    gltf.scene.position.set(0, 0, 0);
+    gltf.scene.position.set(0, 2, 0);
 
     /* if (mesh.current) {
         mesh.current.position.x = coordinates[0];

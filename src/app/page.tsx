@@ -11,13 +11,13 @@ export default function Home() {
   function setCountry(country: string) {
     switch (country) {
       case "Colombia":
-        setCurrentPos([-1, -3.5, 0.5]); setCurrentRot([-0.1, -0.4, 0]);
+        setCurrentPos([-1.5, -4, 0.5]); setCurrentRot([-0.1, -0.4, 0]);
         break;
       case "USA":
-        setCurrentPos([-1, -4, -0.5]); setCurrentRot([0.3, 0, 0]);
+        setCurrentPos([-1.3, -4, -1]); setCurrentRot([0.3, 0, 0]);
         break;
       case "Australia":
-        setCurrentPos([-1.5, -3, 2]); setCurrentRot([-0.7, 2.2, 0]);
+        setCurrentPos([-1.5, -3, 3]); setCurrentRot([-0.7, 2.2, 0]);
         break;
     }
   }
