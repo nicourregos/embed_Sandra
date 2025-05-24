@@ -12,6 +12,7 @@ export default function Carrusel({
 
     // Timeline Navigation Variables
     const [index, setIndex] = useState(0);
+    const [OpenedSkill, setOpenedSkill] = useState<number | null>(null);
     const locations = ["Colombia", "Australia", "Australia", "Colombia", "Colombia", "Colombia", "USA", "USA", "USA", "Colombia"];
     let isAnimating = false;
     const FIXED_POSITION = 4;
@@ -732,9 +733,18 @@ export default function Carrusel({
                                 </div>
                                 <div className="achievements-bottom-line"></div>
                             </div>
-
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 0 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Sustainability Overarching Department</div>
+                                        <div className="border rounded-full px-2 text-sm">Marketing</div>
+                                        <div className="border rounded-full px-2 text-sm">Finance</div>
+                                        <div className="border rounded-full px-2 text-sm">Human Resources</div>
+                                        <div className="border rounded-full px-2 text-sm">Procurement & Supply Chain</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(0); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -849,7 +859,17 @@ export default function Carrusel({
                             </div>
 
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 1 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Marketing</div>
+                                        <div className="border rounded-full px-2 text-sm">Finance</div>
+                                        <div className="border rounded-full px-2 text-sm">Operation</div>
+                                        <div className="border rounded-full px-2 text-sm">Human Resources</div>
+                                        <div className="border rounded-full px-2 text-sm">Procurement & Supply Chain</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(1); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -967,7 +987,16 @@ export default function Carrusel({
                             </div>
 
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 2 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Marketing</div>
+                                        <div className="border rounded-full px-2 text-sm">Finance</div>
+                                        <div className="border rounded-full px-2 text-sm">Operation</div>
+                                        <div className="border rounded-full px-2 text-sm">Sustainability Overarching Department</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(2); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -1072,7 +1101,14 @@ export default function Carrusel({
                             </div>
 
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 3 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Sustainability Overarching Department</div>
+                                        <div className="border rounded-full px-2 text-sm">Operation</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(3); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -1177,7 +1213,13 @@ export default function Carrusel({
                             </div>
 
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 4 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Operation</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(4); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -1282,7 +1324,13 @@ export default function Carrusel({
                             </div>
 
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 5 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Research & Development</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(5); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -1387,7 +1435,14 @@ export default function Carrusel({
                             </div>
 
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 6 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Sustainability Overarching Department</div>
+                                        <div className="border rounded-full px-2 text-sm">Research & Development</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(6); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -1492,7 +1547,14 @@ export default function Carrusel({
                             </div>
 
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 7 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Procurement & Supply Chain</div>
+                                        <div className="border rounded-full px-2 text-sm">Operation</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(7); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -1584,7 +1646,15 @@ export default function Carrusel({
                             </div>
 
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 8 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Sustainability Overarching Department</div>
+                                        <div className="border rounded-full px-2 text-sm">Operation</div>
+                                        <div className="border rounded-full px-2 text-sm">Research & Development</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(8); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -1689,7 +1759,14 @@ export default function Carrusel({
                             </div>
 
                             <div className="skills fixed bottom-0 rounded-b-[20px]">
-                                <div className="skills-title">Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                {OpenedSkill === 9 ?
+                                    <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
+                                        <div className="border rounded-full px-2 text-sm">Sustainability Overarching Department</div>
+                                        <div className="border rounded-full px-2 text-sm">Operation</div>
+                                    </div>
+                                    :
+                                    <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(9); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
+                                }
                             </div>
                         </div>
                     </div>
