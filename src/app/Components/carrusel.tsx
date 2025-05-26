@@ -209,7 +209,7 @@ export default function Carrusel({
         if (window.innerWidth < 768 && newIndex !== 0 && newIndex > index) {
             targetPositionPx = (window.innerWidth / 2) + (cardWidth / 2);
         }
-        if (window.innerWidth < 370 && newIndex > index) {
+        if (window.innerWidth < 360 && newIndex > index) {
             targetPositionPx = (window.innerWidth / 2) + (cardWidth * 0.8);
         }
         else if (window.innerWidth < 360) {

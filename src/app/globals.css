@@ -259,11 +259,12 @@ body {
 
 .skills {
   width: 364px;
+  max-width: 90vw;
   margin-top: 0px;
   padding-bottom: 20px;
   display: flex;
   margin-left: -20px;
-  padding-left: 30px;
+  padding-left: 15px;
   padding-right: 15px;
   align-items: center;
   background: #ffffff88;
@@ -273,6 +274,7 @@ body {
 
 .skills-title {
   font-size: 20px;
+  margin-left: 15px;
   font-weight: 500;
   font-family: 'Chivo Mono', monospace;
   color: #000000;
