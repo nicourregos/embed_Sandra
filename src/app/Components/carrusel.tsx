@@ -635,7 +635,7 @@ export default function Carrusel({
                                 <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="Company Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2021</div>
-                                    <div className="status">- current</div>
+                                    <div className="status">- 2025</div>
                                 </div>
                             </div>
 
