@@ -15,10 +15,10 @@ export default function Carrusel({
     const [OpenedSkill, setOpenedSkill] = useState<number | null>(null);
     const locations = ["Colombia", "Australia", "Australia", "Colombia", "Colombia", "Colombia", "USA", "USA", "USA", "Colombia"];
     const [isAnimating, setIsAnimating] = useState(false);
-    const FIXED_POSITION = 4;
+    //const FIXED_POSITION = 4;
 
     useEffect(() => {
-        selectCard(0)
+        selectCard(0, true)
     }, []);
 
     /*    function createCardClones() {
@@ -65,7 +65,7 @@ export default function Carrusel({
            }
        } */
 
-    function initTimeline() {
+    /* function initTimeline() {
         // Getting all cards
         const cards = document.querySelectorAll('.timeline-card');
 
@@ -86,15 +86,11 @@ export default function Carrusel({
         document.querySelectorAll('.timeline-card:not(.clone)').forEach((card, index) => {
             card.addEventListener('click', () => {
                 if (!card.classList.contains('active') && !isAnimating) {
-                    selectCard(index);
+                    selectCard(index, true);
                 }
             });
         });
-
-        setTimeout(() => {
-            selectCard(index, true);
-        }, 100);
-    }
+    } */
 
     function selectCard(newIndex: number, isInitial = false) {
         if (isAnimating) return;
@@ -127,8 +123,8 @@ export default function Carrusel({
         // Also updating the corresponding clone cards
         const clonesToUpdate = document.querySelectorAll(`.timeline-card.clone[data-original-index="${newIndex}"]`) as NodeListOf<HTMLElement>;
 
+        moveTimelineToPosition(newIndex, isInitial);
         // Starting the animation to move the timeline
-        moveTimelineToPosition(isInitial);
 
         // After the timeline animation is complete, activate the card
         setTimeout(() => {
@@ -162,7 +158,7 @@ export default function Carrusel({
             adjustArrowsPosition();
 
             setIsAnimating(false); // Resetting animation state
-        }, isInitial ? 0 : 700);
+        }, isInitial ? 100 : 700);
         // Updating current index
         setIndex(newIndex);
     }
@@ -185,7 +181,7 @@ export default function Carrusel({
         });
     }
 
-    function moveTimelineToPosition(isInitial = false) {
+    function moveTimelineToPosition(newIndex: number, isInitial = false) {
         const timeline = document.getElementById('timeline');
         const container = document.querySelector('.timeline-container');
         const cards = document.querySelectorAll('.timeline-card:not(.clone)');
@@ -196,26 +192,31 @@ export default function Carrusel({
         const containerRect = container.getBoundingClientRect();
 
         // Accounting for the clone cards when calculating position
-        const selectedCard = cards[index];
+        const selectedCard = cards[newIndex];
         const selectedCardRect = selectedCard?.getBoundingClientRect();
 
         // Calculating card width and spacing
         const cardWidth = (selectedCard as HTMLElement).offsetWidth;
-        const cardMargin = parseInt(window.getComputedStyle(selectedCard).marginRight) || 10;
-        const cardSpacing = cardWidth + (cardMargin * 2);
+        //const cardMargin = parseInt(window.getComputedStyle(selectedCard).marginRight) || 10;
+        //const cardSpacing = cardWidth + (cardMargin * 2);
 
         // Calculating the center point where we want the selected card to be
         const containerCenter = containerRect.left + (containerRect.width / 2);
 
         // Calculating position offset to place selected card at FIXED_POSITION
-        const targetPositionOffset = (FIXED_POSITION - Math.floor(cards.length / 2)) * cardSpacing;
-        const targetPositionPx = containerCenter - cardWidth / 2;
+        //const targetPositionOffset = (FIXED_POSITION - Math.floor(cards.length / 2)) * cardSpacing;
+        let targetPositionPx = containerCenter - cardWidth / 2;
+        if (window.innerWidth < 768 && newIndex !== 0 && newIndex > index) {
+            targetPositionPx = window.innerWidth / 2 + cardWidth / 2;
+        }
 
         // Current position of the selected card
         const currentPositionPx = selectedCardRect.left + (cardWidth / 2);
 
         // Calculating how far we need to move the timeline
-        const moveDistance = targetPositionPx - currentPositionPx;
+        const moveDistance = Math.round(targetPositionPx - currentPositionPx);
+
+        console.log(currentPositionPx, targetPositionPx, moveDistance);
 
         // Getting current transform value
         const currentTransform = window.getComputedStyle(timeline).getPropertyValue('transform');
@@ -234,7 +235,9 @@ export default function Carrusel({
         if (isInitial) {
             // For initial positioning, no animation
             timeline.style.transition = 'none';
-            timeline.style.transform = `translateX(${newTranslateX}px)`;
+            if (window.innerWidth > 768) {
+                timeline.style.transform = `translateX(${newTranslateX}px)`;
+            }
             // Force reflow
             void timeline.offsetWidth;
             timeline.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
@@ -317,19 +320,6 @@ export default function Carrusel({
             }
         });
 
-        // Initializing everything when the document is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            initTimeline();
-            initializeAllLeadershipSections();
-
-            // Making toggle functions available globally
-            /* window.toggleRole = toggleRole;
-            window.toggleLeadership = toggleLeadership;
-            window.toggleAchievement = toggleAchievement;
-            window.positionPanelWithAchievement = positionPanelWithAchievement;
-            window.checkAndAdjustPanelOverlaps = checkAndAdjustPanelOverlaps;
-            window.validateAllPanelPositions = validateAllPanelPositions; */
-        });
 
         // Adding CSS directly in JavaScript to ensure proper transitions
         document.addEventListener('DOMContentLoaded', function () {
@@ -480,8 +470,6 @@ export default function Carrusel({
         content.classList.toggle('expanded');
         arrow.classList.toggle('right');
 
-        // Repositioning achievement panels if needed
-        setTimeout(validateAllPanelPositions, 300);
     }
 
     function toggleLeadership(year: number) {
@@ -492,9 +480,6 @@ export default function Carrusel({
 
         content.classList.toggle('expanded');
         arrow.classList.toggle('right');
-
-        // Repositioning achievement panels if needed
-        setTimeout(validateAllPanelPositions, 300);
     }
 
     function toggleAchievements(year: string) {
@@ -505,12 +490,9 @@ export default function Carrusel({
 
         content.classList.toggle('expanded');
         arrow.classList.toggle('right');
-
-        // Repositioning achievement panels if needed
-        setTimeout(validateAllPanelPositions, 300);
     }
 
-    function initializeAllLeadershipSections() {
+    /* function initializeAllLeadershipSections() {
         // Making sure all leadership sections start collapsed
         const years = [2003, 2007, 2010, 2013, 2014, 2018, 2020, 2021];
 
@@ -535,7 +517,7 @@ export default function Carrusel({
                 }
             }
         });
-    }
+    } */
 
     /* function toggleAchievement(panelId: string, arrowId: string, itemId: string) {
         const arrow = document.getElementById(arrowId);
@@ -587,7 +569,7 @@ export default function Carrusel({
         }
     } */
 
-    function checkAndAdjustPanelOverlaps() {
+    /* function checkAndAdjustPanelOverlaps() {
         const activePanels = Array.from(document.querySelectorAll('.expandable-panel.active'))
             .filter(panel => panel.id.includes('achievement')) as HTMLElement[];
 
@@ -626,7 +608,7 @@ export default function Carrusel({
 
         checkAndAdjustPanelOverlaps();
         setTimeout(checkAndAdjustPanelOverlaps, 50);
-    }
+    } */
 
     return (
         <>
@@ -723,7 +705,7 @@ export default function Carrusel({
                                 >
                                     <span className="achievement-bullet">•</span>
                                     <span className="achievement-text">Building a team and creating new services
-                                        <span id="achievement3-arrow-2021" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2021-3")}>▾</span>
+                                        <span id="achievement-arrow-2021-3" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleAchievements("2021-3")}>▾</span>
                                     </span>
                                 </div>
                                 <div id="achievement-content-2021-3" className="achievement-content">
@@ -1006,7 +988,7 @@ export default function Carrusel({
                             <div className="year">2014</div>
                             <div className="status">- 2017</div>
                             <div className="logo-container my-6">
-                                <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="Company Logo" className="w-4/6" />
+                                <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="PwC Logo" className="w-4/6" />
                             </div>
                             <div className="card-location mb-4">Manager</div>
                             <div className="card-location">Bogota, Colombia</div>
@@ -1022,7 +1004,7 @@ export default function Carrusel({
 
                             <div className="role-container">
                                 <div id="director-role-2014" className="role" >
-                                    Manager <span id="role-arrow-2017" className="role-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleRole(2014)}>▾</span>
+                                    Manager <span id="role-arrow-2014" className="role-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleRole(2014)}>▾</span>
                                 </div>
                                 <div className="department">of the Environment, Sustainable Energy, and Climate Change Unit.</div>
                                 <div id="role-content-2014" className="achievement-content">
