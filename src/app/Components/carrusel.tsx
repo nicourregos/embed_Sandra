@@ -205,9 +205,15 @@ export default function Carrusel({
 
         // Calculating position offset to place selected card at FIXED_POSITION
         //const targetPositionOffset = (FIXED_POSITION - Math.floor(cards.length / 2)) * cardSpacing;
-        let targetPositionPx = containerCenter - cardWidth / 2;
+        let targetPositionPx = containerCenter - (cardWidth / 2);
         if (window.innerWidth < 768 && newIndex !== 0 && newIndex > index) {
-            targetPositionPx = window.innerWidth / 2 + cardWidth / 2;
+            targetPositionPx = (window.innerWidth / 2) + (cardWidth / 2);
+        }
+        if (window.innerWidth < 370 && newIndex > index) {
+            targetPositionPx = (window.innerWidth / 2) + (cardWidth * 0.8);
+        }
+        else if (window.innerWidth < 360) {
+            targetPositionPx = window.innerWidth / 2 - (cardWidth * 0.4);
         }
 
         // Current position of the selected card
@@ -215,8 +221,6 @@ export default function Carrusel({
 
         // Calculating how far we need to move the timeline
         const moveDistance = Math.round(targetPositionPx - currentPositionPx);
-
-        console.log(currentPositionPx, targetPositionPx, moveDistance);
 
         // Getting current transform value
         const currentTransform = window.getComputedStyle(timeline).getPropertyValue('transform');
@@ -623,7 +627,7 @@ export default function Carrusel({
                     <div className="timeline-card active" data-year="2021" data-location="Colombia">
                         <div className="compact-content" onClick={() => { selectCard(0); }}>
                             <div className="year">2021</div>
-                            <div className="status">- current</div>
+                            <div className="status">- 2025</div>
                             <div className="logo-container my-6">
                                 <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="Company Logo" className="w-4/6" />
                             </div>

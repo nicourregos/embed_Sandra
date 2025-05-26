@@ -90,7 +90,7 @@ body {
 }
 
 .logo {
-  width: 120px;
+  width: auto;
   height: auto;
   margin-right: 15px;
   margin-left: 5px;
@@ -754,7 +754,7 @@ body {
 }
 
 .timeline-card.active .year {
-  font-size: 74px;
+  font-size: 64px;
   color: #666;
   font-weight: 500;
   line-height: 0.8;
@@ -803,14 +803,15 @@ body {
 
 .role-arrow {
   display: inline-block;
-  position: absolute;
-  margin-left: 150px;
+  height: 100%;
   transition: transform 0.3s ease;
   transform: rotate(-180deg);
 }
 
 .role-arrow.right {
   transform: rotate(0deg);
+
+  height: 100%;
 }
 
 .department {
@@ -1107,6 +1108,22 @@ body {
   
   .professional-path-subtitle {
       margin: 5px auto;
+  }
+
+  .timeline-card.active .logo {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    margin-left: 0px;
+    margin-top: 12px;
+  }
+
+  .timeline-card.active .status {
+    font-size: 36px;
+    margin-top: -10px;
+    font-weight: 500;
+    color: #666;
+    font-family: 'PP Neue Montreal', sans-serif;
   }
 
 }
