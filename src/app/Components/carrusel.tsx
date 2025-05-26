@@ -743,7 +743,7 @@ export default function Carrusel({
                                 <img src="https://static.wixstatic.com/media/871773_5f4d5c106c4341d38d4078b595fb864c~mv2.png" alt="Someva Logo" className="w-4/6" />
                             </div>
                             <div className="card-location mb-4">Sr. Development Manager</div>
-                            <div className="card-location">Melbourne, Australia</div>
+                            <div className="card-location">Sydney, Australia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
