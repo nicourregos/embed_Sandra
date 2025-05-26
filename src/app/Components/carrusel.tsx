@@ -14,7 +14,7 @@ export default function Carrusel({
     const [index, setIndex] = useState(0);
     const [OpenedSkill, setOpenedSkill] = useState<number | null>(null);
     const locations = ["Colombia", "Australia", "Australia", "Colombia", "Colombia", "Colombia", "USA", "USA", "USA", "Colombia"];
-    let isAnimating = false;
+    const [isAnimating, setIsAnimating] = useState(false);
     const FIXED_POSITION = 4;
 
     useEffect(() => {
@@ -97,10 +97,10 @@ export default function Carrusel({
     }
 
     function selectCard(newIndex: number, isInitial = false) {
+        if (isAnimating) return;
         setterCountry(locations[newIndex]);
-        if (isAnimating && !isInitial) return;
 
-        isAnimating = true;
+        setIsAnimating(true);
 
         // Closing any open panels first
         resetExpandedElements();
@@ -161,8 +161,8 @@ export default function Carrusel({
 
             adjustArrowsPosition();
 
-            isAnimating = false;
-        }, isInitial ? 100 : 700);
+            setIsAnimating(false); // Resetting animation state
+        }, isInitial ? 0 : 700);
         // Updating current index
         setIndex(newIndex);
     }
@@ -209,7 +209,7 @@ export default function Carrusel({
 
         // Calculating position offset to place selected card at FIXED_POSITION
         const targetPositionOffset = (FIXED_POSITION - Math.floor(cards.length / 2)) * cardSpacing;
-        const targetPositionPx = containerCenter + targetPositionOffset;
+        const targetPositionPx = containerCenter - cardWidth / 2;
 
         // Current position of the selected card
         const currentPositionPx = selectedCardRect.left + (cardWidth / 2);
@@ -753,15 +753,15 @@ export default function Carrusel({
                         <div className="compact-content" onClick={() => { selectCard(1); }}>
                             <div className="year">2019</div>
                             <div className="status">- 2021</div>
-                            <div className="logo-container my-10">
-                                <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Company Logo" className="w-5/6" />
+                            <div className="logo-container my-6">
+                                <img src="https://static.wixstatic.com/media/871773_5f4d5c106c4341d38d4078b595fb864c~mv2.png" alt="Someva Logo" className="w-4/6" />
                             </div>
                             <div className="card-location mb-4">Sr. Development Manager</div>
                             <div className="card-location">Melbourne, Australia</div>
                         </div>
                         <div className="detailed-content">
                             <div className="card-header">
-                                <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Company Logo" className="logo" />
+                                <img src="https://static.wixstatic.com/media/871773_5f4d5c106c4341d38d4078b595fb864c~mv2.png" alt="Someva Logo" className="logo" />
                                 <div className="year-container">
                                     <div className="year">2019</div>
                                     <div className="status">- 2021</div>
