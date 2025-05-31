@@ -27,7 +27,7 @@ export default function Home() {
       <section className="absolute w-full h-full">
         <World coordinates={currentPos} rotation={currentRot}></World>
       </section>
-      <section className="relative w-full h-screen content-center z-0">
+      <section className="relative w-full content-center z-0 flex flex-col">
         <Carrusel setterCountry={setCountry}></Carrusel>
         {/* <div className="flex flex-row gap-4 items-center justify-center">
           <div className="flex flex-col w-60 h-48 bg-yellow/50 justify-self-center"
