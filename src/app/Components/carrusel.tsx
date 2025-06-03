@@ -639,19 +639,19 @@ export default function Carrusel({
     const getColorCard = (skills: string[]) => {
         let color = "#FFFFFF";
         if (selectedSkill == "Sustainability") {
-            color = "#68D42F";
+            color = "#6FEB33";
         } else if (selectedSkill == "Marketing") {
-            color = "#0BE0AB";
+            color = "#4DF5AC";
         } else if (selectedSkill == "Finance") {
-            color = "#25BFE6";
+            color = "#0087FF";
         } else if (selectedSkill == "HR") {
-            color = "#337AFF";
+            color = "#42CBE2";
         } else if (selectedSkill == "Procurement") {
-            color = "#8A5CFF";
+            color = "#874DF9";
         } else if (selectedSkill == "Operation") {
-            color = "#DC5CFF";
+            color = "#6280FF";
         } else if (selectedSkill == "R&D") {
-            color = "#FF69B6";
+            color = "#F42942";
         }
         if (selectedSkill != null && skills.includes(selectedSkill)) {
             return `bg-gradient-to-tr from-[${color}]/40 to-40% to-white/50`
@@ -663,45 +663,45 @@ export default function Carrusel({
         <>
             <div className="scroll-arrow left-arrow" onClick={scrollLeft}>←</div>
             <div className="scroll-arrow right-arrow" onClick={scrollRight}>→</div>
-            <div className=" from-[#68D42F]/40 from-[#0BE0AB]/40 from-[#25BFE6]/40 from-[#337AFF]/40 from-[#8A5CFF]/40 from-[#DC5CFF]/40 from-[#FF69B6]/40"></div>
+            <div className=" from-[#6FEB33]/40 from-[#4DF5AC]/40 from-[#0087FF]/40 from-[#42CBE2]/40 from-[#874DF9]/40 from-[#6280FF]/40 from-[#F42942]/40"></div>
             <div className="flex flex-col px-2 py-4 sm:px-4 items-center sm:items-end justify-center rounded-xl bg-white shadow-lg fixed top-4 right-4 ml-4 z-80 max-sm:w-[90%] max-w-[400px]"
                 style={{ zIndex: 1000 }}>
                 <div className={`skills-title`} style={{ marginLeft: "0px" }}>Highlight skills<span id="skillselector-arrow" className="role-arrow sm:hidden" style={{ color: "#003DAE" }} onClick={() => toggleSkillSelector()}>▾</span></div>
                 <div className={`flex flex-wrap gap-2 justify-center sm:justify-end text-white mt-2 ${!skillsOpened && "max-sm:h-0 max-sm:overflow-hidden max-sm:mt-0 max-sm:opacity-0"} transition-all duration-500 ease-in-out`} >
                     {selectedSkill != "Sustainability" ?
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#68D42F] text-[#68D42F] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#6FEB33] text-[#6FEB33] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
                         :
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#68D42F] bg-[#68D42F] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#6FEB33] bg-[#6FEB33] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
                     }
                     {selectedSkill != "Marketing" ?
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#0BE0AB] text-[#0BE0AB] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Marketing")}>Marketing</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#4DF5AC] text-[#4DF5AC] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Marketing")}>Commercial & Marketing</div>
                         :
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#0BE0AB] bg-[#0BE0AB] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Marketing")}>Marketing</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#4DF5AC] bg-[#4DF5AC] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Marketing")}>Commercial & Marketing</div>
                     }
                     {selectedSkill != "Finance" ?
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#25BFE6] text-[#25BFE6] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#0087FF] text-[#0087FF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
                         :
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#25BFE6] bg-[#25BFE6] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#0087FF] bg-[#0087FF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
                     }
                     {selectedSkill != "HR" ?
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#337AFF] text-[#337AFF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#42CBE2] text-[#42CBE2] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
                         :
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#337AFF] bg-[#337AFF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#42CBE2] bg-[#42CBE2] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
                     }
                     {selectedSkill != "Procurement" ?
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#8A5CFF] text-[#8A5CFF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#874DF9] text-[#874DF9] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
                         :
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#8A5CFF] bg-[#8A5CFF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#874DF9] bg-[#874DF9] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
                     }
                     {selectedSkill != "Operation" ?
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#DC5CFF] text-[#DC5CFF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#6280FF] text-[#6280FF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
                         :
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#DC5CFF] bg-[#DC5CFF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#6280FF] bg-[#6280FF] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
                     }
                     {selectedSkill != "R&D" ?
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#FF69B6] text-[#FF69B6] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#F42942] text-[#F42942] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
                         :
-                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#FF69B6] bg-[#FF69B6] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
+                        <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#F42942] bg-[#F42942] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
                     }
                 </div>
             </div>
@@ -810,11 +810,11 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 0 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#68D42F] text-[#68D42F]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#0BE0AB] text-[#0BE0AB]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Marketing</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Finance" && "font-medium border-[#25BFE6] text-[#25BFE6]"}`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "HR" && "font-medium border-[#337AFF] text-[#337AFF]"}`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Procurement" && "font-medium border-[#8A5CFF] text-[#8A5CFF]"}`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#6FEB33] text-[#6FEB33]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#4DF5AC] text-[#4DF5AC]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Commercial & Marketing</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Finance" && "font-medium border-[#0087FF] text-[#0087FF]"}`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "HR" && "font-medium border-[#42CBE2] text-[#42CBE2]"}`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Procurement" && "font-medium border-[#874DF9] text-[#874DF9]"}`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(0); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -855,7 +855,7 @@ export default function Carrusel({
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>I’m particularly proud of my contribution to designing the project layout in a way that minimized biodiversity impacts while maximizing energy output. This involved working closely with civil engineers, surveyors, and wind specialists, carefully integrating geological and topographical data to achieve the optimal layout for the wind farm.</p>
+                                                <p>I{"'"}m particularly proud of my contribution to designing the project layout in a way that minimized biodiversity impacts while maximizing energy output. This involved working closely with civil engineers, surveyors, and wind specialists, carefully integrating geological and topographical data to achieve the optimal layout for the wind farm.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -935,11 +935,11 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 1 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#0BE0AB] text-[#0BE0AB]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Marketing</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Finance" && "font-medium border-[#25BFE6] text-[#25BFE6]"}`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "HR" && "font-medium border-[#337AFF] text-[#337AFF]"}`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Procurement" && "font-medium border-[#8A5CFF] text-[#8A5CFF]"}`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#DC5CFF] text-[#DC5CFF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#4DF5AC] text-[#4DF5AC]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Commercial & Marketing</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Finance" && "font-medium border-[#0087FF] text-[#0087FF]"}`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "HR" && "font-medium border-[#42CBE2] text-[#42CBE2]"}`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Procurement" && "font-medium border-[#874DF9] text-[#874DF9]"}`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#6280FF] text-[#6280FF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(1); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -1063,10 +1063,10 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 2 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#68D42F] text-[#68D42F]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#0BE0AB] text-[#0BE0AB]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Marketing</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Finance" && "font-medium border-[#25BFE6] text-[#25BFE6]"}`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#DC5CFF] text-[#DC5CFF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#6FEB33] text-[#6FEB33]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#4DF5AC] text-[#4DF5AC]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Commercial & Marketing</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Finance" && "font-medium border-[#0087FF] text-[#0087FF]"}`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#6280FF] text-[#6280FF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(2); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -1075,7 +1075,7 @@ export default function Carrusel({
                             </div>
                         </div>
 
-                        <div className={`${getColorCard(["Sustainability", "Operation"])} timeline-card ${index == 3 && "active"}`} data-year="2014" data-location="Colombia">
+                        <div className={`${getColorCard(["Sustainability", "Marketing", "Finance", "HR", "Procurement", "Operation"])} timeline-card ${index == 3 && "active"}`} data-year="2014" data-location="Colombia">
                             <div className="compact-content" onClick={() => { selectCard(3); }}>
                                 <div className="year">2014</div>
                                 <div className="status">- 2017</div>
@@ -1177,8 +1177,12 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 3 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#68D42F] text-[#68D42F]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#DC5CFF] text-[#DC5CFF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#6FEB33] text-[#6FEB33]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#4DF5AC] text-[#4DF5AC]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Commercial & Marketing</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Finance" && "font-medium border-[#0087FF] text-[#0087FF]"}`} onClick={(e) => toggleSkill(e, "Finance")}>Finance</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "HR" && "font-medium border-[#42CBE2] text-[#42CBE2]"}`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Procurement" && "font-medium border-[#874DF9] text-[#874DF9]"}`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#6280FF] text-[#6280FF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(3); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -1187,7 +1191,7 @@ export default function Carrusel({
                             </div>
                         </div>
 
-                        <div className={`${getColorCard(["Operation"])} timeline-card ${index == 4 && "active"}`} data-year="2013" data-location="Colombia">
+                        <div className={`${getColorCard(["Marketing", "HR", "Operation"])} timeline-card ${index == 4 && "active"}`} data-year="2013" data-location="Colombia">
                             <div className="compact-content" onClick={() => { selectCard(4); }}>
                                 <div className="year">2013</div>
                                 <div className="status">- 2014</div>
@@ -1289,7 +1293,9 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 4 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#DC5CFF] text-[#DC5CFF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#4DF5AC] text-[#4DF5AC]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Commercial & Marketing</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "HR" && "font-medium border-[#42CBE2] text-[#42CBE2]"}`} onClick={(e) => toggleSkill(e, "HR")}>Human Resources</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#6280FF] text-[#6280FF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(4); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -1298,7 +1304,7 @@ export default function Carrusel({
                             </div>
                         </div>
 
-                        <div className={`${getColorCard(["R&D"])} timeline-card ${index == 5 && "active"}`} data-year="2012" data-location="Colombia">
+                        <div className={`${getColorCard(["Marketing", "R&D"])} timeline-card ${index == 5 && "active"}`} data-year="2012" data-location="Colombia">
                             <div className="compact-content" onClick={() => { selectCard(5); }}>
                                 <div className="year">2012</div>
                                 <div className="status">- 2013</div>
@@ -1400,7 +1406,8 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 5 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "R&D" && "font-medium border-[#FF69B6] text-[#FF69B6]"}`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#4DF5AC] text-[#4DF5AC]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Commercial & Marketing</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "R&D" && "font-medium border-[#F42942] text-[#F42942]"}`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(5); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -1511,8 +1518,8 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 6 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#68D42F] text-[#68D42F]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "R&D" && "font-medium border-[#FF69B6] text-[#FF69B6]"}`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#6FEB33] text-[#6FEB33]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "R&D" && "font-medium border-[#F42942] text-[#F42942]"}`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(6); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -1521,7 +1528,7 @@ export default function Carrusel({
                             </div>
                         </div>
 
-                        <div className={`${getColorCard(["Procurement", "Operation"])} timeline-card ${index == 7 && "active"}`} data-year="2007" data-location="USA">
+                        <div className={`${getColorCard(["Procurement", "Operation", "R&D"])} timeline-card ${index == 7 && "active"}`} data-year="2007" data-location="USA">
                             <div className="compact-content" onClick={() => { selectCard(7); }}>
                                 <div className="year">2007</div>
                                 <div className="status">- 2010</div>
@@ -1623,8 +1630,9 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 7 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Procurement" && "font-medium border-[#8A5CFF] text-[#8A5CFF]"}`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#DC5CFF] text-[#DC5CFF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Procurement" && "font-medium border-[#874DF9] text-[#874DF9]"}`} onClick={(e) => toggleSkill(e, "Procurement")}>Procurement & Supply</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#6280FF] text-[#6280FF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "R&D" && "font-medium border-[#F42942] text-[#F42942]"}`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(7); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -1722,9 +1730,9 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 8 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#68D42F] text-[#68D42F]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#DC5CFF] text-[#DC5CFF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "R&D" && "font-medium border-[#FF69B6] text-[#FF69B6]"}`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#6FEB33] text-[#6FEB33]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#6280FF] text-[#6280FF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "R&D" && "font-medium border-[#F42942] text-[#F42942]"}`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(8); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -1733,7 +1741,7 @@ export default function Carrusel({
                             </div>
                         </div>
 
-                        <div className={`${getColorCard(["Sustainability", "Operation"])} timeline-card ${index == 9 && "active"}`} data-year="2001" data-location="Colombia">
+                        <div className={`${getColorCard(["Sustainability", "Marketing", "Operation", "R&D"])} timeline-card ${index == 9 && "active"}`} data-year="2001" data-location="Colombia">
                             <div className="compact-content" onClick={() => { selectCard(9); }}>
                                 <div className="year">2001</div>
                                 <div className="status">- 2005</div>
@@ -1835,8 +1843,10 @@ export default function Carrusel({
                                 <div className="skills fixed bottom-0 rounded-b-[20px]">
                                     {OpenedSkill === 9 ?
                                         <div className="flex flex-wrap gap-2 justify-left mt-2" onClick={() => { setOpenedSkill(null); }}>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#68D42F] text-[#68D42F]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
-                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#DC5CFF] text-[#DC5CFF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Sustainability" && "font-medium border-[#6FEB33] text-[#6FEB33]"}`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Marketing" && "font-medium border-[#4DF5AC] text-[#4DF5AC]"}`} onClick={(e) => toggleSkill(e, "Marketing")}>Commercial & Marketing</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "Operation" && "font-medium border-[#6280FF] text-[#6280FF]"}`} onClick={(e) => toggleSkill(e, "Operation")}>Operation</div>
+                                            <div className={`border rounded-full px-2 text-sm font-medium ${selectedSkill == "R&D" && "font-medium border-[#F42942] text-[#F42942]"}`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
                                         </div>
                                         :
                                         <div className="skills-title w-full  transition-all duration-500" onClick={() => { setOpenedSkill(9); }}>Skills <span id="skills-arrow" className="section-title-arrow right" style={{ color: "#003DAE" }}>▾</span></div>
@@ -1846,6 +1856,12 @@ export default function Carrusel({
                         </div>
 
                     </div>
+                </div>
+                <div className="flex flex-row gap-2 items-center justify-center w-full">
+                    <div className="h-2 w-2 bg-black"></div>
+                    <div className="h-2 w-2 bg-black"></div>
+                    <div className="h-2 w-2 bg-black"></div>
+                    <div className="h-2 w-2 bg-black"></div>
                 </div>
             </div>
         </>
