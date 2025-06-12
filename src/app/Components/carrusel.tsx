@@ -16,7 +16,7 @@ export default function Carrusel({
 }: Props) {
 
     // Timeline Navigation Variables
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(-1);
     const [OpenedSkill, setOpenedSkill] = useState<number | null>(null);
     const locations = ["Colombia", "Australia", "Australia", "Colombia", "Colombia", "Colombia", "USA", "USA", "USA", "Colombia"];
     const [isAnimating, setIsAnimating] = useState(false);
@@ -24,7 +24,8 @@ export default function Carrusel({
     //const FIXED_POSITION = 4;
 
     useEffect(() => {
-        selectCard(0, true)
+        adjustArrowsPosition();
+        moveTimelineToPosition(0, true);
     }, []);
 
     /*    function createCardClones() {
@@ -129,7 +130,7 @@ export default function Carrusel({
         // Also updating the corresponding clone cards
         const clonesToUpdate = document.querySelectorAll(`.timeline-card.clone[data-original-index="${newIndex}"]`) as NodeListOf<HTMLElement>;
 
-        moveTimelineToPosition(newIndex, isInitial);
+        moveTimelineToPosition(newIndex, isInitial || index === -1);
         // Starting the animation to move the timeline
 
         // After the timeline animation is complete, activate the card
@@ -160,7 +161,6 @@ export default function Carrusel({
                 detailedContent.style.transition = 'opacity 0.5s ease-in-out';
                 detailedContent.style.opacity = '1';
             }
-
             adjustArrowsPosition();
 
             setIsAnimating(false); // Resetting animation state
@@ -216,10 +216,19 @@ export default function Carrusel({
             targetPositionPx = (window.innerWidth / 2) + (cardWidth / 2);
         }
         if (window.innerWidth < 360 && newIndex > index) {
-            targetPositionPx = (window.innerWidth / 2) + (cardWidth * 0.8);
+            targetPositionPx = (window.innerWidth / 2) + (cardWidth * 0.7);
         }
         else if (window.innerWidth < 360) {
-            targetPositionPx = window.innerWidth / 2 - (cardWidth * 0.4);
+            targetPositionPx = window.innerWidth / 2 - (cardWidth * 0.7);
+        }
+        if (window.innerWidth < 360 && isInitial) {
+            targetPositionPx = 160
+        }
+        else if (isInitial) {
+            targetPositionPx = 280
+        }
+        else if (window.innerWidth < 360 && newIndex === 0) {
+            targetPositionPx = 50
         }
 
         // Current position of the selected card
@@ -244,13 +253,11 @@ export default function Carrusel({
         // Applying the transform with or without animation
         if (isInitial) {
             // For initial positioning, no animation
-            timeline.style.transition = 'none';
-            if (window.innerWidth > 768) {
-                timeline.style.transform = `translateX(${newTranslateX}px)`;
-            }
+            timeline.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            timeline.style.transform = `translateX(${newTranslateX}px)`;
+
             // Force reflow
             void timeline.offsetWidth;
-            timeline.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
         } else {
             // For user interaction, apply smooth animation
             timeline.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
@@ -260,10 +267,9 @@ export default function Carrusel({
 
     function scrollLeft() {
         if (!isAnimating) {
-            const cards = document.querySelectorAll('.timeline-card:not(.clone)');
             // Move to previous card, with wraparound for infinite scrolling
-            const prevIndex = (index - 1 + cards.length) % cards.length;
-            selectCard(prevIndex);
+            const prevIndex = (index - 1);
+            selectCard(prevIndex < 0 ? 9 : prevIndex);
         }
     }
 
@@ -425,7 +431,7 @@ export default function Carrusel({
 
     function adjustArrowsPosition() {
         // Finding the active card's center
-        const activeCard = document.querySelector('.timeline-card.active');
+        const activeCard = document.querySelector('.timeline-wrapper');
         if (!activeCard) return;
 
         const cardRect = activeCard.getBoundingClientRect();
@@ -663,14 +669,37 @@ export default function Carrusel({
         return `bg-gradient-to-tr from-[#FFFFFF]/40 to-40% to-white/50`
     }
 
+    const getColorTab = (skills: string[]) => {
+        let color = "#555555";
+        if (selectedSkill == "Sustainability") {
+            color = "#6FEB33";
+        } else if (selectedSkill == "Marketing") {
+            color = "#4DF5AC";
+        } else if (selectedSkill == "Finance") {
+            color = "#42CBE2";
+        } else if (selectedSkill == "HR") {
+            color = "#0087FF";
+        } else if (selectedSkill == "Procurement") {
+            color = "#874DF9";
+        } else if (selectedSkill == "Operation") {
+            color = "#F42942";
+        } else if (selectedSkill == "R&D") {
+            color = "#F4B942";
+        }
+        if (selectedSkill != null && skills.includes(selectedSkill)) {
+            return `bg-[${color}]/40`
+        }
+        return `bg-[#555555]/40`
+    }
+
     return (
         <>
-            <div className="scroll-arrow left-arrow" onClick={scrollLeft}>←</div>
-            <div className="scroll-arrow right-arrow" onClick={scrollRight}>→</div>
-            <div className=" from-[#6FEB33]/40 from-[#4DF5AC]/40 from-[#42CBE2]/40 from-[#0087FF]/40 from-[#874DF9]/40 from-[#F42942]/40 from-[#F4B942]/40"></div>
-            <div className="flex flex-col px-2 py-4 sm:px-4 items-center sm:items-end justify-center rounded-xl bg-white shadow-lg fixed top-4 right-4 ml-4 z-80 max-sm:w-[90%] max-w-[400px]"
+            <div className={`scroll-arrow left-arrow ${index > 0 && 'bg-[#0047AB]'}`} onClick={scrollLeft}>←</div>
+            <div className={`scroll-arrow right-arrow ${index < 9 && 'bg-[#0047AB]'}`} onClick={scrollRight}>→</div>
+            <div className="bg-[#6FEB33]/40 bg-[#4DF5AC]/40 bg-[#42CBE2]/40 bg-[#0087FF]/40 bg-[#874DF9]/40 bg-[#F42942]/40 bg-[#F4B942]/40 from-[#6FEB33]/40 from-[#4DF5AC]/40 from-[#42CBE2]/40 from-[#0087FF]/40 from-[#874DF9]/40 from-[#F42942]/40 from-[#F4B942]/40"></div>
+            <div className="flex flex-col px-2 py-4 sm:px-4 items-center sm:items-end justify-center rounded-xl bg-white shadow-lg fixed top-4 right-4 ml-4 z-80 max-sm:w-[90%] max-w-[500px]"
                 style={{ zIndex: 1000 }}>
-                <div className={`skills-title`} style={{ marginLeft: "0px" }}>Highlight skills<span id="skillselector-arrow" className="role-arrow sm:hidden" style={{ color: "#003DAE" }} onClick={() => toggleSkillSelector()}>▾</span></div>
+                <div className={`skills-title`} style={{ marginLeft: "0px" }}>Highlight skills<span id="skillselector-arrow" className="role-arrow sm:hidden right" style={{ color: "#003DAE" }} onClick={() => toggleSkillSelector()}>▾</span></div>
                 <div className={`flex flex-wrap gap-2 justify-center sm:justify-end text-white mt-2 ${!skillsOpened && "max-sm:h-0 max-sm:overflow-hidden max-sm:mt-0 max-sm:opacity-0"} transition-all duration-500 ease-in-out`} >
                     {selectedSkill != "Sustainability" ?
                         <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#6FEB33] text-[#6FEB33] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "Sustainability")}>Overarching Sustainability</div>
@@ -707,9 +736,10 @@ export default function Carrusel({
                         :
                         <div className={`border rounded-full px-2 text-sm font-medium font-medium border-[#F4B942] bg-[#F4B942] transition-all duration-200 ease-in-out`} onClick={(e) => toggleSkill(e, "R&D")}>Research & Development</div>
                     }
+                    <a href="#skillDescriptions" className={`text-black border rounded-full px-2 text-sm font-medium font-medium border-black/20 transition-all duration-200 ease-in-out hover:underline`} onClick={() => toggleSkillSelector()}>Learn more ↓</a>
                 </div>
             </div>
-            <div id="timelineCarousel" className="flex flex-col gap-2 items-center justify-center">
+            <div id="timelineCarousel" className="flex flex-col gap-2 items-center justify-center lg:w-screen">
 
                 <div className="timeline-container pb-2 md:pb-4">
                     <div className="blur-overlay blur-left"></div>
@@ -1863,16 +1893,16 @@ export default function Carrusel({
                 </div>
             </div>
             <div className="flex flex-row gap-2 items-center justify-center w-full md:hidden h-4" style={{ zIndex: 100 }}>
-                <div className={`h-2 w-2 ${index == 0 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(0)}></div>
-                <div className={`h-2 w-2 ${index == 1 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(1)}></div>
-                <div className={`h-2 w-2 ${index == 2 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(2)}></div>
-                <div className={`h-2 w-2 ${index == 3 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(3)}></div>
-                <div className={`h-2 w-2 ${index == 4 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(4)}></div>
-                <div className={`h-2 w-2 ${index == 5 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(5)}></div>
-                <div className={`h-2 w-2 ${index == 6 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(6)}></div>
-                <div className={`h-2 w-2 ${index == 7 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(7)}></div>
-                <div className={`h-2 w-2 ${index == 8 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(8)}></div>
-                <div className={`h-2 w-2 ${index == 9 ? "bg-[#0047AB]" : "bg-[#0047AB]/30"} rounded-full`} onClick={() => selectCard(9)}></div>
+                <div className={`h-2 w-2 ${index == 0 ? "bg-[#0047AB]" : getColorTab(["Sustainability", "Marketing", "Finance", "HR", "Procurement"])} rounded-full`} onClick={() => selectCard(0)}></div>
+                <div className={`h-2 w-2 ${index == 1 ? "bg-[#0047AB]" : getColorTab(["Marketing", "Finance", "HR", "Procurement", "Operation"])} rounded-full`} onClick={() => selectCard(1)}></div>
+                <div className={`h-2 w-2 ${index == 2 ? "bg-[#0047AB]" : getColorTab(["Sustainability", "Marketing", "Finance", "Operation"])} rounded-full`} onClick={() => selectCard(2)}></div>
+                <div className={`h-2 w-2 ${index == 3 ? "bg-[#0047AB]" : getColorTab(["Sustainability", "Marketing", "Finance", "HR", "Procurement", "Operation"])} rounded-full`} onClick={() => selectCard(3)}></div>
+                <div className={`h-2 w-2 ${index == 4 ? "bg-[#0047AB]" : getColorTab(["Marketing", "HR", "Operation"])} rounded-full`} onClick={() => selectCard(4)}></div>
+                <div className={`h-2 w-2 ${index == 5 ? "bg-[#0047AB]" : getColorTab(["Marketing", "R&D"])} rounded-full`} onClick={() => selectCard(5)}></div>
+                <div className={`h-2 w-2 ${index == 6 ? "bg-[#0047AB]" : getColorTab(["Sustainability", "R&D"])} rounded-full`} onClick={() => selectCard(6)}></div>
+                <div className={`h-2 w-2 ${index == 7 ? "bg-[#0047AB]" : getColorTab(["Procurement", "Operation", "R&D"])} rounded-full`} onClick={() => selectCard(7)}></div>
+                <div className={`h-2 w-2 ${index == 8 ? "bg-[#0047AB]" : getColorTab(["Sustainability", "Operation", "R&D"])} rounded-full`} onClick={() => selectCard(8)}></div>
+                <div className={`h-2 w-2 ${index == 9 ? "bg-[#0047AB]" : getColorTab(["Sustainability", "Operation", "R&D"])} rounded-full`} onClick={() => selectCard(9)}></div>
             </div>
         </>
     );

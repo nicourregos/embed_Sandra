@@ -49,6 +49,14 @@ body {
   flex-direction: column;
 }
 
+.skillDescriptionTitle {
+  font-size: 48px;
+  color: #003DAE;
+  font-weight: 500;
+  line-height: 0.9;
+  font-family: 'PP Neue Montreal', sans-serif;
+}
+
 .year {
   font-size: 85px;
   color: #666;
@@ -510,7 +518,7 @@ body {
 /* Timeline Container Styles */
 .timeline-container {
   width: 100%;
-  height: 98vh;
+  margin-top:25vh;
   overflow-x: hidden; 
   display: flex;
   align-items: end;
@@ -540,7 +548,7 @@ body {
 
 .timeline-wrapper {
   display: flex;
-  min-height: 50vh;
+  min-height: 553px;
   align-items: center;
   position: relative;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -552,7 +560,6 @@ body {
   position: fixed;
   width: 40px;
   height: 40px;
-  background: #0047AB;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -599,8 +606,8 @@ body {
 
 /* Timeline Card Styles - Compact View */
 .timeline-card {
-  min-width: 180px;
-  width: 180px;
+  min-width: 160px;
+  width: 160px;
   height: 260px;
   margin: 0 10px;
   font-family: 'Raleway', sans-serif;
@@ -1034,6 +1041,10 @@ body {
 
   .right-arrow {
     right: 10px;
+  }
+
+  .timeline-container {
+      margin-top: 100px;
   }
   
   .professional-path-container {
