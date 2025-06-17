@@ -216,13 +216,13 @@ export default function Carrusel({
             targetPositionPx = (window.innerWidth / 2) + (cardWidth / 2);
         }
         if (window.innerWidth < 360 && newIndex > index) {
-            targetPositionPx = (window.innerWidth / 2) + (cardWidth * 0.7);
+            targetPositionPx = (window.innerWidth / 2) + (cardWidth * 0.78);
         }
         else if (window.innerWidth < 360) {
-            targetPositionPx = window.innerWidth / 2 - (cardWidth * 0.7);
+            targetPositionPx = window.innerWidth / 2 - (cardWidth * 0.77);
         }
         if (window.innerWidth < 360 && isInitial) {
-            targetPositionPx = 160
+            targetPositionPx = 150
         }
         else if (isInitial) {
             targetPositionPx = 280
