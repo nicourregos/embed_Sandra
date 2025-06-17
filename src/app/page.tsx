@@ -63,50 +63,7 @@ export default function Home() {
             <h4 className="skillDescriptionTitle">Skills</h4>
             <p className="text-xs">Each of these areas reflects the ability to integrate science, strategy, and empathetic leadership into concrete solutions. The expertise spans multiple sectors, always guided by the purpose of creating real, sustainable, and collective impact.</p>
           </div>
-          <div className="flex flex-col bg-gradient-to-tr from-[#6FEB33]/40 to-60% to-white/50 rounded-xl shadow-lg p-4 h-full gap-2 justify-between" onClick={(e) => toggleOpenedSkill(e, "Sustainability")}>
-            <h4 className="text-xl">Overarching Sustainability</h4>
-            <p className="font-bold text-xs">Orients executive leadership by integrating climate science, ESG governance, and purpose-driven transformation into strategic decision-making.</p>
-            {(openedSkill === "Sustainability" || !small) && (
-              <>
-                <p className="font-bold text-xs">Related skills:</p>
-                <div className="flex flex-wrap gap-x-2 gap-y-px underline decoration-dotted decoration-[#6FEB33]">
-                  <p className="text-xs">Operation Cert.</p>
-                  <p className="text-xs">Energy Cert.</p>
-                  <p className="text-xs">Material Cert.</p>
-                  <p className="text-xs">Sustainability Reporting</p>
-                  <p className="text-xs">Sustainability Education & Training</p>
-                  <p className="text-xs">Sustainability Programmes</p>
-                  <p className="text-xs">Sustainability Mgmt.</p>
-                  <p className="text-xs">Green Building</p>
-                  <p className="text-xs">Sustainable Architecture</p>
-                  <p className="text-xs">Lifecycle Assessment</p>
-                  <p className="text-xs">Environmental Sustainability</p>
-                  <p className="text-xs">Energy and Water Conservation</p>
-                </div>
-              </>
-            )}
-            <a href="#timelineCarousel" className="text-sm bg-[#6FEB33] text-white rounded-full text-center hover:underline" onClick={(e) => toggleSkill(e, "Sustainability")}>Explore the work ↑</a>
-          </div>
-          <div className="flex flex-col bg-gradient-to-tr from-[#4DF5AC]/40 to-60% to-white/50 rounded-xl shadow-lg p-4 h-full gap-2 justify-between" onClick={(e) => toggleOpenedSkill(e, "Marketing")}>
-            <h4 className="text-xl">Commercial & Marketing</h4>
-            <p className="font-bold text-xs">Transforms complex climate strategies into compelling narratives that attract clients, investment, and cross-sector partnerships.</p>
-            {(openedSkill === "Marketing" || !small) && (
-              <>
-                <p className="font-bold text-xs">Related skills:</p>
-                <div className="flex flex-wrap gap-x-2 gap-y-px underline decoration-dotted decoration-[#4DF5AC]">
-                  <p className="text-xs">Sustainability Marketing</p>
-                  <p className="text-xs">Corporate Social Responsibility</p>
-                  <p className="text-xs">Content for Sustainable Brands</p>
-                  <p className="text-xs">Green Public Relations</p>
-                  <p className="text-xs">Sustainability Market Research</p>
-                  <p className="text-xs">Community Outreach</p>
-                  <p className="text-xs">Environmental Storytelling</p>
-                  <p className="text-xs">Content Strategy</p>
-                </div>
-              </>
-            )}
-            <a href="#timelineCarousel" className="text-sm bg-[#4DF5AC] text-white rounded-full text-center hover:underline" onClick={(e) => toggleSkill(e, "Marketing")}>Explore the work ↑</a>
-          </div>
+
           <div className="flex flex-col bg-gradient-to-tr from-[#42CBE2]/40 to-60% to-white/50 rounded-xl shadow-lg p-4 h-full gap-2 justify-between" onClick={(e) => toggleOpenedSkill(e, "Finance")}>
             <h4 className="text-xl">Finance</h4>
             <p className="font-bold text-xs">Connects financial strategy with sustainability through climate finance, investment structuring, and ESG risk management.</p>
@@ -114,13 +71,12 @@ export default function Home() {
               <>
                 <p className="font-bold text-xs">Related skills:</p>
                 <div className="flex flex-wrap gap-x-2 gap-y-px underline decoration-dotted decoration-[#42CBE2]">
-                  <p className="text-xs">ESG Risk Mgmt.</p>
-                  <p className="text-xs">Sustainable Investments</p>
-                  <p className="text-xs">Impact Investments</p>
-                  <p className="text-xs">Sustainability Reporting</p>
-                  <p className="text-xs">Climate Finance</p>
-                  <p className="text-xs">Sustainable Bonds and Loans</p>
-                  <p className="text-xs">Sustainability Ratings and Research</p>
+                  <p className="text-xs">Climate Finance & Risk Management</p>
+                  <p className="text-xs">Financial Modeling & Analysis</p>
+                  <p className="text-xs">Cost & Pricing Strategies</p>
+                  <p className="text-xs">Sustainable Bonds & Loans Evaluation</p>
+                  <p className="text-xs">ESG Ratings and Metrics</p>
+                  <p className="text-xs">Decision-Making</p>
                 </div>
               </>
             )}
@@ -128,18 +84,15 @@ export default function Home() {
           </div>
           <div className="flex flex-col bg-gradient-to-tr from-[#0087FF]/40 to-60% to-white/50 rounded-xl shadow-lg p-4 h-full gap-2 justify-between" onClick={(e) => toggleOpenedSkill(e, "HR")}>
             <h4 className="text-xl">Human Resources</h4>
-            <p className="font-bold text-xs">Integrates DEI, ethical leadership, and capacity-building into sustainability programs and organizational culture.</p>
+            <p className="font-bold text-xs">Integrates ethical leadership, and capacity-building into sustainability programs and organizational culture.</p>
             {(openedSkill === "HR" || !small) && (
               <>
                 <p className="font-bold text-xs">Related skills:</p>
                 <div className="flex flex-wrap gap-x-2 gap-y-px underline decoration-dotted decoration-[#0087FF]">
-                  <p className="text-xs">Ethical Compliance</p>
-                  <p className="text-xs">Human Rights</p>
-                  <p className="text-xs">Diversity and Inclusion</p>
-                  <p className="text-xs">Sustainable Programme</p>
-                  <p className="text-xs">Social KPIs Coordination</p>
-                  <p className="text-xs">Sustainability Reporting</p>
-                  <p className="text-xs">Social Aspects Analysis</p>
+                  <p className="text-xs">Leadership & Team Building</p>
+                  <p className="text-xs">Diversity & Inclusion Facilitation</p>
+                  <p className="text-xs">Stakeholder Negotiation & Influence</p>
+                  <p className="text-xs">Social KPIs Understanding</p>
                 </div>
               </>
             )}
@@ -147,18 +100,15 @@ export default function Home() {
           </div>
           <div className="flex flex-col bg-gradient-to-tr from-[#874DF9]/40 to-60% to-white/50 rounded-xl shadow-lg p-4 h-full gap-2 justify-between" onClick={(e) => toggleOpenedSkill(e, "Procurement")}>
             <h4 className="text-xl">Procurement & Supply</h4>
-            <p className="font-bold text-xs">Applies circular economy principles and Scope 3 strategies to optimize impact across procurement systems.</p>
+            <p className="font-bold text-xs">Applies circular economy principles and carbon footprint strategies to enhance sustainability across procurement and supply chain operations.</p>
             {(openedSkill === "Procurement" || !small) && (
               <>
                 <p className="font-bold text-xs">Related skills:</p>
                 <div className="flex flex-wrap gap-x-2 gap-y-px underline decoration-dotted decoration-[#874DF9]">
-                  <p className="text-xs">Ethical Sourcing</p>
-                  <p className="text-xs">Green Procurement</p>
-                  <p className="text-xs">Supply Chain Sustainability</p>
-                  <p className="text-xs">Circular Economy Coordination</p>
+                  <p className="text-xs">Circular Economy & Resource Efficiency</p>
+                  <p className="text-xs">Supply Chain Sustainability Analysis</p>
+                  <p className="text-xs">Environmental and Social Compliance</p>
                   <p className="text-xs">Carbon Footprint Analysis</p>
-                  <p className="text-xs">Supply Chain Compliance</p>
-                  <p className="text-xs">Responsible Packaging</p>
                 </div>
               </>
             )}
@@ -171,16 +121,16 @@ export default function Home() {
               <>
                 <p className="font-bold text-xs">Related skills:</p>
                 <div className="flex flex-wrap gap-x-2 gap-y-px underline decoration-dotted decoration-[#F42942]">
-                  <p className="text-xs">EHS</p>
-                  <p className="text-xs">Renewable Energy</p>
-                  <p className="text-xs">Smart Grid</p>
-                  <p className="text-xs">Facilities Mgmt.</p>
-                  <p className="text-xs">Land Use Planning</p>
-                  <p className="text-xs">Waste Reduction Coordination</p>
-                  <p className="text-xs">Energy & Water Efficiency Engineering</p>
-                  <p className="text-xs">Energy Efficiency Mgmt.</p>
-                  <p className="text-xs">Sustainable Farming</p>
-                  <p className="text-xs">Organic Agriculture</p>
+                  <p className="text-xs">Renewable Energy Feasibility & Wind Assessment</p>
+                  <p className="text-xs">Clean Technology Development</p>
+                  <p className="text-xs">Industrial Water Reuse & Sludge Recycling</p>
+                  <p className="text-xs">Wastewater Treatment Applications</p>
+                  <p className="text-xs">GIS & Database Management</p>
+                  <p className="text-xs">Environmental Impact Assessment</p>
+                  <p className="text-xs">Project Management</p>
+                  <p className="text-xs">Risk Assessment & Mitigation</p>
+                  <p className="text-xs">Time Management & Prioritization</p>
+                  <p className="text-xs">Organizational Skills</p>
                 </div>
               </>
             )}
@@ -193,22 +143,64 @@ export default function Home() {
               <>
                 <p className="font-bold text-xs">Related skills:</p>
                 <div className="flex flex-wrap gap-x-2 gap-y-px underline decoration-dotted decoration-[#F4B942]">
-                  <p className="text-xs">Agronomic Data Science</p>
-                  <p className="text-xs">Soil & Conservation Science</p>
-                  <p className="text-xs">Wildlife Biology</p>
-                  <p className="text-xs">Material Innovation</p>
-                  <p className="text-xs">Product Development</p>
-                  <p className="text-xs">Process Optimization</p>
-                  <p className="text-xs">Energy Storage</p>
-                  <p className="text-xs">Renewable Energy</p>
-                  <p className="text-xs">Carbon Capture</p>
-                  <p className="text-xs">Electric Grid Optimization</p>
-                  <p className="text-xs">Supply Chain Innovation</p>
-                  <p className="text-xs">Consumer Behavior Research</p>
+                  <p className="text-xs">Soil Science & Pollution</p>
+                  <p className="text-xs">Molecular & Cellular Biology</p>
+                  <p className="text-xs">Thermodynamic & FRET Analysis</p>
+                  <p className="text-xs">Experimental Design & Protocol Development</p>
+                  <p className="text-xs">Material Characterization Techniques</p>
+                  <p className="text-xs">Statistical Methods & Analysis</p>
+                  <p className="text-xs">Research & Grant Writing</p>
+                  <p className="text-xs">Innovation & Adaptability</p>
+                  <p className="text-xs">Attention to Detail</p>
+                  <p className="text-xs">Mentoring & Leadership</p>
                 </div>
               </>
             )}
             <a href="#timelineCarousel" className="text-sm bg-[#F4B942] text-white rounded-full text-center hover:underline" onClick={(e) => toggleSkill(e, "R&D")}>Explore the work ↑</a>
+          </div>
+          <div className="flex flex-col bg-gradient-to-tr from-[#6FEB33]/40 to-60% to-white/50 rounded-xl shadow-lg p-4 h-full gap-2 justify-between" onClick={(e) => toggleOpenedSkill(e, "Sustainability")}>
+            <h4 className="text-xl">Overarching Sustainability</h4>
+            <p className="font-bold text-xs">Orients executive leadership by integrating climate science, ESG governance, and purpose-driven transformation into strategic decision-making.</p>
+            {(openedSkill === "Sustainability" || !small) && (
+              <>
+                <p className="font-bold text-xs">Related skills:</p>
+                <div className="flex flex-wrap gap-x-2 gap-y-px underline decoration-dotted decoration-[#6FEB33]">
+                  <p className="text-xs">Sustainability Strategy & Frameworks</p>
+                  <p className="text-xs">Regulatory & Policy Insight</p>
+                  <p className="text-xs">Strategic Leadership & Vision</p>
+                  <p className="text-xs">Change Management & Influence</p>
+                  <p className="text-xs">Stakeholder Engagement & Advocacy</p>
+                  <p className="text-xs">Analytical Problem-Solving</p>
+                  <p className="text-xs">Communication & Presentation</p>
+                  <p className="text-xs">Data Analytics & Reporting</p>
+                  <p className="text-xs">Program Accreditation & Course Design</p>
+                  <p className="text-xs">Collaboration & Coordination</p>
+                  <p className="text-xs">Adaptability & Initiative</p>
+                </div>
+              </>
+            )}
+            <a href="#timelineCarousel" className="text-sm bg-[#6FEB33] text-white rounded-full text-center hover:underline" onClick={(e) => toggleSkill(e, "Sustainability")}>Explore the work ↑</a>
+          </div>
+          <div className="flex flex-col bg-gradient-to-tr from-[#4DF5AC]/40 to-60% to-white/50 rounded-xl shadow-lg p-4 h-full gap-2 justify-between" onClick={(e) => toggleOpenedSkill(e, "Marketing")}>
+            <h4 className="text-xl">Commercial & Marketing</h4>
+            <p className="font-bold text-xs">Translates ESG strategies, engineering projects, and business initiatives into compelling narratives that drive client engagement, unlock investment opportunities, and foster cross-sector partnerships.</p>
+            {(openedSkill === "Marketing" || !small) && (
+              <>
+                <p className="font-bold text-xs">Related skills:</p>
+                <div className="flex flex-wrap gap-x-2 gap-y-px underline decoration-dotted decoration-[#4DF5AC]">
+                  <p className="text-xs">Stakeholder Engagement and Strategic Relationship Management</p>
+                  <p className="text-xs">Client Account Management and Business Development</p>
+                  <p className="text-xs">Resource Allocation and Budget Oversight</p>
+                  <p className="text-xs">Proposal Development and Contract Negotiation</p>
+                  <p className="text-xs">Strategic Communication</p>
+                  <p className="text-xs">Sustainability Reporting & Storytelling</p>
+                  <p className="text-xs">Community Outreach & Engagement</p>
+                  <p className="text-xs">Content Strategy for Sustainable Brands</p>
+                  <p className="text-xs">Collaboration & Networking</p>
+                </div>
+              </>
+            )}
+            <a href="#timelineCarousel" className="text-sm bg-[#4DF5AC] text-white rounded-full text-center hover:underline" onClick={(e) => toggleSkill(e, "Marketing")}>Explore the work ↑</a>
           </div>
         </div>
       </section >

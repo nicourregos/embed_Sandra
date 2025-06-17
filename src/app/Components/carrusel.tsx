@@ -753,7 +753,7 @@ export default function Carrusel({
                                 <div className="logo-container my-6">
                                     <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="Company Logo" className="w-4/6" />
                                 </div>
-                                <div className="card-location mb-4">Director</div>
+                                <div className="card-location mb-5">Director</div>
                                 <div className="card-location">Bogotá, Colombia</div>
                             </div>
                             <div className="detailed-content">
@@ -864,7 +864,7 @@ export default function Carrusel({
                                 <div className="logo-container my-6">
                                     <img src="https://static.wixstatic.com/media/871773_5f4d5c106c4341d38d4078b595fb864c~mv2.png" alt="Someva Logo" className="w-4/6" />
                                 </div>
-                                <div className="card-location mb-4">Sr. Development Manager</div>
+                                <div className="card-location mb-5">Sr. Development Manager</div>
                                 <div className="card-location">Sydney, Australia</div>
                             </div>
                             <div className="detailed-content">
@@ -989,7 +989,7 @@ export default function Carrusel({
                                 <div className="logo-container my-10">
                                     <img src="https://static.wixstatic.com/media/871773_8af48e93083c4bf99569fd5462ec8fb6~mv2.webp" alt="Company Logo" className="w-5/6" />
                                 </div>
-                                <div className="card-location mb-4">Commercial and Contract Manager</div>
+                                <div className="card-location mb-5">Commercial and Contract Manager</div>
                                 <div className="card-location">Melbourne, Australia</div>
                             </div>
                             <div className="detailed-content">
@@ -1116,7 +1116,7 @@ export default function Carrusel({
                                 <div className="logo-container my-6">
                                     <img src="https://static.wixstatic.com/media/871773_79d3063f2af0462a9eb030ab057557ce~mv2.png" alt="PwC Logo" className="w-4/6" />
                                 </div>
-                                <div className="card-location mb-4">Manager</div>
+                                <div className="card-location mb-5">Manager</div>
                                 <div className="card-location">Bogota, Colombia</div>
                             </div>
                             <div className="detailed-content">
@@ -1232,7 +1232,7 @@ export default function Carrusel({
                                 <div className="logo-container my-8">
                                     <img src="https://static.wixstatic.com/media/23a99f_06acb0576ac4435d90f10ff7c0e44fe6~mv2.png" alt="Integral Logo" className="w-4/6" />
                                 </div>
-                                <div className="card-location mb-4">Team Leader</div>
+                                <div className="card-location mb-5">Team Leader</div>
                                 <div className="card-location">Medellin, Colombia</div>
                             </div>
                             <div className="detailed-content">
@@ -1345,7 +1345,7 @@ export default function Carrusel({
                                 <div className="logo-container my-10">
                                     <img src="https://static.wixstatic.com/media/871773_ea7353bbc8e149389722fffc3198d3bd~mv2.png" alt="UdeM Logo" className="w-4/6" />
                                 </div>
-                                <div className="card-location mb-4">Assistant Professor</div>
+                                <div className="card-location mb-5">Assistant Professor</div>
                                 <div className="card-location">Medellin, Colombia</div>
                             </div>
                             <div className="detailed-content">
@@ -1457,7 +1457,7 @@ export default function Carrusel({
                                 <div className="logo-container my-6">
                                     <img src="https://static.wixstatic.com/media/871773_8ab7bb6fd7d04ea68ceddfe856de17e9~mv2.png" alt="JHU Logo" className="w-4/6" />
                                 </div>
-                                <div className="card-location mb-4">Graduate Research Assistant</div>
+                                <div className="card-location mb-5">Graduate Research Assistant</div>
                                 <div className="card-location">Baltimore, United States</div>
                             </div>
                             <div className="detailed-content">
@@ -1569,7 +1569,7 @@ export default function Carrusel({
                                 <div className="logo-container my-12">
                                     <img src="https://static.wixstatic.com/media/23a99f_95af517d7cbf41af9643ced85079d964~mv2.png" alt="KSU Logo" className="w-4/6" />
                                 </div>
-                                <div className="card-location mb-9">Graduate Research Assistant</div>
+                                <div className="card-location mb-8">Graduate Research Assistant</div>
                                 <div className="card-location">Manhattan, Kansas, United States</div>
                             </div>
                             <div className="detailed-content">
@@ -1682,7 +1682,7 @@ export default function Carrusel({
                                 <div className="logo-container my-10">
                                     <img src="https://static.wixstatic.com/media/23a99f_1153e822d6cc486b91a352390420d9ce~mv2.png" alt="UPR Logo" className="w-4/6" />
                                 </div>
-                                <div className="card-location mb-4">Research Assistant</div>
+                                <div className="card-location mb-5">Research Assistant</div>
                                 <div className="card-location">Mayaguez, Puerto Rico</div>
                             </div>
                             <div className="detailed-content">
@@ -1782,7 +1782,7 @@ export default function Carrusel({
                                 <div className="logo-container my-8">
                                     <img src="https://static.wixstatic.com/media/871773_67daa29cdf9b488389d9c6c387888e65~mv2.png" alt="UPB Logo" className="w-4/6" />
                                 </div>
-                                <div className="card-location mb-4">Junior Research Engineer</div>
+                                <div className="card-location mb-5">Junior Research Engineer</div>
                                 <div className="card-location">Medellín, Colombia</div>
                             </div>
                             <div className="detailed-content">
