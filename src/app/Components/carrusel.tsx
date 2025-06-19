@@ -221,14 +221,15 @@ export default function Carrusel({
         else if (window.innerWidth < 360) {
             targetPositionPx = window.innerWidth / 2 - (cardWidth * 0.77);
         }
+        // Override for initial positioning
         if (window.innerWidth < 360 && isInitial) {
-            targetPositionPx = 150
+            targetPositionPx = 161
         }
         else if (isInitial) {
-            targetPositionPx = 280
+            targetPositionPx = 200
         }
         else if (window.innerWidth < 360 && newIndex === 0) {
-            targetPositionPx = 50
+            targetPositionPx = 43
         }
 
         // Current position of the selected card
@@ -697,7 +698,7 @@ export default function Carrusel({
             <div className={`scroll-arrow left-arrow ${index > 0 && 'bg-[#0047AB]'}`} onClick={scrollLeft}>←</div>
             <div className={`scroll-arrow right-arrow ${index < 9 && 'bg-[#0047AB]'}`} onClick={scrollRight}>→</div>
             <div className="bg-[#6FEB33]/40 bg-[#4DF5AC]/40 bg-[#42CBE2]/40 bg-[#0087FF]/40 bg-[#874DF9]/40 bg-[#F42942]/40 bg-[#F4B942]/40 from-[#6FEB33]/40 from-[#4DF5AC]/40 from-[#42CBE2]/40 from-[#0087FF]/40 from-[#874DF9]/40 from-[#F42942]/40 from-[#F4B942]/40"></div>
-            <div className="flex flex-col px-2 py-4 sm:px-4 items-center sm:items-end justify-center rounded-xl bg-white shadow-lg fixed top-4 right-4 ml-4 z-80 max-sm:w-[90%] max-w-[500px]"
+            <div className="flex flex-col px-2 py-4 sm:px-4 items-center sm:items-end justify-center rounded-xl bg-white shadow-lg sm:self-end sm:mr-4 sm:mt-4 z-80 max-sm:w-full max-w-[500px] max-sm:rounded-t-none absolute "
                 style={{ zIndex: 1000 }}>
                 <div className={`skills-title`} style={{ marginLeft: "0px" }}>Highlight skills<span id="skillselector-arrow" className="role-arrow sm:hidden right" style={{ color: "#003DAE" }} onClick={() => toggleSkillSelector()}>▾</span></div>
                 <div className={`flex flex-wrap gap-2 justify-center sm:justify-end text-white mt-2 ${!skillsOpened && "max-sm:h-0 max-sm:overflow-hidden max-sm:mt-0 max-sm:opacity-0"} transition-all duration-500 ease-in-out`} >
