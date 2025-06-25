@@ -1770,10 +1770,10 @@ export default function Carrusel({
                                 <div className="section">
                                     <div className="section-title-container">
                                         <div className="section-title" >
-                                            Sustainability as Innovation <span id="leadership-arrow-2001" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2001)}>▾</span>
+                                            Sustainability as Innovation <span id="leadership-arrow-2005" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2005)}>▾</span>
                                         </div>
                                     </div>
-                                    <div id="leadership-content-2001" className="leadership-content">
+                                    <div id="leadership-content-2005" className="leadership-content">
                                         <p>Successfully synthesized MCM-41 for the absorption of personal care products (PPCPs), demonstrating the material{"'"}s high efficiency in removing emerging contaminants from wastewater and contributing to more sustainable water management practices.</p>
                                     </div>
                                 </div>
