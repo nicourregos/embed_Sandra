@@ -886,11 +886,11 @@ export default function Carrusel({
                                         <div className="ml-4">
                                             <div className="panel-section">
                                                 <h4>What did I do?:</h4>
-                                                <p>I oversaw the successful delivery of Hills of Gold Wind Farm, ensuring effective management of timelines, budgets, community engagement, technical development, and compliance with environmental and regulatory requirements, while supporting the growth of the team and facilitating capital raising efforts.</p>
+                                                <p>Oversaw the successful delivery of Hills of Gold Wind Farm, ensuring effective management of timelines, budgets, community engagement, technical development, and compliance with environmental and regulatory requirements, while supporting the growth of the team and facilitating capital raising efforts.</p>
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>I{"'"}m particularly proud of my contribution to designing the project layout in a way that minimized biodiversity impacts while maximizing energy output. This involved working closely with civil engineers, surveyors, and wind specialists, carefully integrating geological and topographical data to achieve the optimal layout for the wind farm.</p>
+                                                <p>By coordinating cross-functional responsibilities, aligning technical and regulatory aspects, engaging with stakeholders, mentoring the team, and contributing to capital raising processes.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -898,11 +898,11 @@ export default function Carrusel({
                                 <div className="section">
                                     <div className="section-title-container">
                                         <div className="section-title" >
-                                            Empathetic Leadership <span id="leadership-arrow-2020" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2020)}>▾</span>
+                                            Key highlight <span id="leadership-arrow-2020" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2020)}>▾</span>
                                         </div>
                                     </div>
                                     <div id="leadership-content-2020" className="leadership-content">
-                                        <p>Managed commercial relationships while mentoring junior staff in contract negotiation and stakeholder management.</p>
+                                        <p>I{"'"}m particularly proud of my contribution to designing the project layout in a way that minimized biodiversity impacts while maximizing energy output. This involved working closely with civil engineers, surveyors, and wind specialists, carefully integrating geological and topographical data to achieve the optimal layout for the wind farm.</p>
                                     </div>
                                 </div>
 
@@ -1011,16 +1011,25 @@ export default function Carrusel({
                                         <div className="ml-4">
                                             <div className="panel-section">
                                                 <h4>What did I do?:</h4>
-                                                <p>Maximize the profitability and success of wind farm projects by overseeing commercial and contractual aspects, from bidding strategies and cost analysis to contract negotiation. Ensure alignment with organizational goals and compliance, supporting the Australian Sales Team to secure and deliver profitable, operationally sound projects.</p>
+                                                <p>Maximized the profitability and success of wind farm projects by overseeing commercial and contractual aspects, from bidding strategies and cost analysis to contract negotiation.</p>
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>I developed a comparative tool that standardized commercial metrics across potential projects. This innovation enabled the team and the Board of Directors to objectively assess and decide whether to proceed with the EPC contract for a given wind farm, ultimately strengthening the decision-making process.</p>
+                                                <p>Ensured alignment with organizational goals and compliance, supporting the Australian Sales Team to secure and deliver profitable, operationally sound projects.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div className="section">
+                                    <div className="section-title-container">
+                                        <div className="section-title" >
+                                            Key highlight <span id="leadership-arrow-2017" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2017)}>▾</span>
+                                        </div>
+                                    </div>
+                                    <div id="leadership-content-2017" className="leadership-content">
+                                        <p>{"I’m particularly proud of developing a comparative tool that standardized commercial metrics across potential projects. This innovation enabled the team and the Board of Directors to objectively assess and decide whether to proceed with the EPC contract for a given wind farm, ultimately strengthening the decision-making process."}</p>
+                                    </div>
+                                </div>
                                 <div className="section achievements-section">
                                     <div className="section-title-container">
                                         <div className="section-title">
@@ -1138,16 +1147,25 @@ export default function Carrusel({
                                         <div className="ml-4">
                                             <div className="panel-section">
                                                 <h4>What did I do?:</h4>
-                                                <p>Provide strategic leadership and technical expertise to expand PwC{"'"}s renewable energy and climate change project portfolio. Ensure project feasibility, compliance with stakeholder requirements, and successful grant applications. Oversee the development of feasibility studies, GHG emission inventories, and sustainability strategies while fostering collaboration with local and international suppliers, contractors, and authorities.</p>
+                                                <p>{"Provided strategic leadership and technical expertise to expand PwC’s renewable energy and climate change project portfolio. Ensured project feasibility, compliance with stakeholder requirements, and successful grant applications."}</p>
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>By developing the renewable energy service line, from commercial structuring and client acquisition to the technical and economic evaluation of power generation projects, using agroindustrial residual biomass and waste streams for biogas production. A major component of my contribution was creating financial models that guided clients{"'"} decision-making during the feasibility stage.</p>
+                                                <p>Oversaw the development of feasibility studies, GHG emission inventories, and sustainability strategies while fostering collaboration with local and international suppliers, contractors, and authorities.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div className="section">
+                                    <div className="section-title-container">
+                                        <div className="section-title" >
+                                            Key highlight <span id="leadership-arrow-2014" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2014)}>▾</span>
+                                        </div>
+                                    </div>
+                                    <div id="leadership-content-2014" className="leadership-content">
+                                        <p>During my tenure as a Manager at PwC, I am particularly proud of developing the renewable energy service line, from commercial structuring and client acquisition to the technical and economic evaluation of power generation projects, using agroindustrial residual biomass and waste streams for biogas production. A major component of my contribution was creating financial models that guided clients{"'"} decision-making during the feasibility stage.</p>
+                                    </div>
+                                </div>
                                 <div className="section achievements-section">
                                     <div className="section-title-container">
                                         <div className="section-title">
@@ -1254,16 +1272,25 @@ export default function Carrusel({
                                         <div className="ml-4">
                                             <div className="panel-section">
                                                 <h4>What did I do?:</h4>
-                                                <p>Led the Environmental Impact Assessment (Abiotic Team) to deliver high-quality, compliant EIA (Environmental Impact Assessment Studies) and proposals for energy and mining projects. Ensure rigorous data analysis, timely execution, and alignment with environmental regulations and stakeholder requirements, while effectively coordinating a multidisciplinary team and fostering stakeholder collaboration.</p>
+                                                <p>Led the Environmental Impact Assessment (Abiotic Team) to deliver high-quality, compliant EIA studies and proposals for energy and mining projects.</p>
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>At Integral, one of my most significant contributions was transforming the team culture and dynamics. I shifted the group from having individuals specialized in a single subject to a multidisciplinary team capable of contributing to different aspects of the environmental impact assessment. This change not only improved the company{"'"}s performance indicators but also supported the professional development of each team member.</p>
+                                                <p>Ensured rigorous data analysis, timely execution, and alignment with environmental regulations and stakeholder requirements, while effectively coordinating a multidisciplinary team and fostering stakeholder collaboration.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div className="section">
+                                    <div className="section-title-container">
+                                        <div className="section-title" >
+                                            Key highlight <span id="leadership-arrow-2013" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2013)}>▾</span>
+                                        </div>
+                                    </div>
+                                    <div id="leadership-content-2013" className="leadership-content">
+                                        <p>At Integral, one of my most significant contributions was transforming the team culture and dynamics. I shifted the group from having individuals specialized in a single subject to a multidisciplinary team capable of contributing to different aspects of the environmental impact assessment. This change not only improved the company{"'"}s performance indicators but also supported the professional development of each team member.</p>
+                                    </div>
+                                </div>
                                 <div className="section achievements-section">
                                     <div className="section-title-container">
                                         <div className="section-title">
@@ -1371,12 +1398,21 @@ export default function Carrusel({
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>At the University of Medellín I am especially proud of having educated two cohorts of Environmental Engineers in soil science and soil treatment. My classes emphasized understanding the role of this natural capital in the sustainable development of various industries, examining how these activities impact soil resources, and exploring technological solutions for effective soil treatment and conservation.</p>
+                                                <p>By developing innovative lab methodologies, supporting program accreditation processes, and contributing to scholarly publications.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div className="section">
+                                    <div className="section-title-container">
+                                        <div className="section-title" >
+                                            Key highlight <span id="leadership-arrow-2012" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2012)}>▾</span>
+                                        </div>
+                                    </div>
+                                    <div id="leadership-content-2012" className="leadership-content">
+                                        <p>At the University of Medellín I am especially proud of having educated two cohorts of Environmental Engineers in soil science and soil treatment. My classes emphasized understanding the role of this natural capital in the sustainable development of various industries, examining how these activities impact soil resources, and exploring technological solutions for effective soil treatment and conservation.</p>
+                                    </div>
+                                </div>
                                 <div className="section achievements-section">
                                     <div className="section-title-container">
                                         <div className="section-title">
@@ -1479,16 +1515,25 @@ export default function Carrusel({
                                         <div className="ml-4">
                                             <div className="panel-section">
                                                 <h4>What did I do?:</h4>
-                                                <p>The principal objective was to advance research in biomaterials and biomembrane physics by employing molecular and cellular biology techniques to study protein interactions, particularly EGFR receptor dynamics. Through thermodynamic analysis, method development (including vesiculation buffers), and statistical evaluation of membrane protein behavior, the role aimed to generate novel insights into protein structure-function relationships in mammalian cells and contribute to cutting-edge biomaterials research.</p>
+                                                <p>Advanced research in biomaterials and biomembrane physics by studying protein interactions, particularly EGFR receptor dynamics, to generate novel insights into protein structure-function relationships in mammalian cells.</p>
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>One of my proudest achievements at JHU was developing a specialized vesiculation buffer that minimized protein cross-linking in biomimetic cell membranes, thereby improving the accuracy of thermodynamic and imaging studies. I began by benchmarking every existing vesiculation protocol in the literature, followed by a systematic screening of 20 potential buffer formulations. From those trials, I identified three promising candidates that produced optimal vesiculation. Through further detailed analyses, I refined the final formulation in a remarkably short timeframe. This innovation significantly enhanced our laboratory{"'"}s ability to perform high-precision imaging studies and facilitated deeper insights into membrane protein dynamics.</p>
+                                                <p>Employing molecular and cellular biology techniques, conducting thermodynamic analyses, developing specialized methods (including vesiculation buffers), and performing statistical evaluations of membrane protein behavior.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div className="section">
+                                    <div className="section-title-container">
+                                        <div className="section-title" >
+                                            Transformative Impact <span id="leadership-arrow-2010" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2010)}>▾</span>
+                                        </div>
+                                    </div>
+                                    <div id="leadership-content-2010" className="leadership-content">
+                                        <p>One of my proudest achievements at JHU was developing a specialized vesiculation buffer that minimized protein cross-linking in biomimetic cell membranes, thereby improving the accuracy of thermodynamic and imaging studies. I began by benchmarking every existing vesiculation protocol in the literature, followed by a systematic screening of 20 potential buffer formulations. From those trials, I identified three promising candidates that produced optimal vesiculation. Through further detailed analyses, I refined the final formulation in a remarkably short timeframe. This innovation significantly enhanced our laboratory{"'"}s ability to perform high-precision imaging studies and facilitated deeper insights into membrane protein dynamics.</p>
+                                    </div>
+                                </div>
                                 <div className="section achievements-section">
                                     <div className="section-title-container">
                                         <div className="section-title">
@@ -1591,16 +1636,25 @@ export default function Carrusel({
                                         <div className="ml-4">
                                             <div className="panel-section">
                                                 <h4>What did I do?:</h4>
-                                                <p>Advance agronomic and environmental research by quantifying nutrient dynamics in soils and water bodies, developing large-scale data resources (e.g., phytoremediation databases), and providing actionable insights for best management practices. This included conducting field and laboratory studies, performing comprehensive statistical analyses, and collaborating with state and local agencies to enhance environmental sustainability.</p>
+                                                <p>Advanced agronomic and environmental research by quantifying nutrient dynamics in soils and water bodies, developing large-scale data resources (e.g., phytoremediation databases), and providing actionable insights for best management practices.</p>
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>At Kansas State University, I am particularly proud of how my research findings supported the implementation of effective agronomic management practices at the watershed scale, reducing nitrogen and phosphorus contamination and thereby helping prevent eutrophication in rivers and lakes throughout Kansas.</p>
+                                                <p>Conducted field and laboratory studies, performed comprehensive statistical analyses, and collaborated with state and local agencies to enhance environmental sustainability.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div className="section">
+                                    <div className="section-title-container">
+                                        <div className="section-title" >
+                                            Purpose-Driven Solutions <span id="leadership-arrow-2007" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2007)}>▾</span>
+                                        </div>
+                                    </div>
+                                    <div id="leadership-content-2007" className="leadership-content">
+                                        <p>At Kansas State University, I am particularly proud of how my research findings supported the implementation of effective agronomic management practices at the watershed scale, reducing nitrogen and phosphorus contamination and thereby helping prevent eutrophication in rivers and lakes throughout Kansas.</p>
+                                    </div>
+                                </div>
                                 <div className="section achievements-section">
                                     <div className="section-title-container">
                                         <div className="section-title">
@@ -1804,16 +1858,25 @@ export default function Carrusel({
                                         <div className="ml-4">
                                             <div className="panel-section">
                                                 <h4>What did I do?:</h4>
-                                                <p>Advance research and development of green and clean technologies by optimizing industrial processes for water reuse and by incorporating industrial sludge into high-value products. This entailed conducting lab-scale experiments, coordinating industrial-level tests, and applying simulation and design tools to ensure efficient, sustainable outcomes.</p>
+                                                <p>Advanced research and development of green and clean technologies by optimizing industrial processes for water reuse and by incorporating industrial sludge into high-value products.</p>
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>Successfully repurposing paper industry sludge into eco-friendly ceramic bricks. Through extensive lab tests and subsequent industrial-scale trials, I demonstrated that these residual materials could be effectively integrated into brick production, resulting in environmentally responsible and economically feasible building solutions.</p>
+                                                <p>Conducted lab-scale experiments, coordinated industrial-level tests, and applied simulation and design tools to ensure efficient, sustainable outcomes.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div className="section">
+                                    <div className="section-title-container">
+                                        <div className="section-title" >
+                                            Sustainability as Innovation <span id="leadership-arrow-2001" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2001)}>▾</span>
+                                        </div>
+                                    </div>
+                                    <div id="leadership-content-2001" className="leadership-content">
+                                        <p>I am particularly proud of successfully repurposing paper industry sludge into eco-friendly ceramic bricks. Through extensive lab tests and subsequent industrial-scale trials, I demonstrated that these residual materials could be effectively integrated into brick production, resulting in environmentally responsible and economically feasible building solutions.</p>
+                                    </div>
+                                </div>
                                 <div className="section achievements-section">
                                     <div className="section-title-container">
                                         <div className="section-title">
