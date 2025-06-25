@@ -898,7 +898,7 @@ export default function Carrusel({
                                 <div className="section">
                                     <div className="section-title-container">
                                         <div className="section-title" >
-                                            Key highlight <span id="leadership-arrow-2020" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2020)}>▾</span>
+                                            Sustainability as Innovation <span id="leadership-arrow-2020" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2020)}>▾</span>
                                         </div>
                                     </div>
                                     <div id="leadership-content-2020" className="leadership-content">
@@ -1023,7 +1023,7 @@ export default function Carrusel({
                                 <div className="section">
                                     <div className="section-title-container">
                                         <div className="section-title" >
-                                            Key highlight <span id="leadership-arrow-2017" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2017)}>▾</span>
+                                            Transformative Impact <span id="leadership-arrow-2017" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2017)}>▾</span>
                                         </div>
                                     </div>
                                     <div id="leadership-content-2017" className="leadership-content">
@@ -1159,7 +1159,7 @@ export default function Carrusel({
                                 <div className="section">
                                     <div className="section-title-container">
                                         <div className="section-title" >
-                                            Key highlight <span id="leadership-arrow-2014" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2014)}>▾</span>
+                                            Sustainability as Innovation <span id="leadership-arrow-2014" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2014)}>▾</span>
                                         </div>
                                     </div>
                                     <div id="leadership-content-2014" className="leadership-content">
@@ -1284,7 +1284,7 @@ export default function Carrusel({
                                 <div className="section">
                                     <div className="section-title-container">
                                         <div className="section-title" >
-                                            Key highlight <span id="leadership-arrow-2013" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2013)}>▾</span>
+                                            Empathic Leadership <span id="leadership-arrow-2013" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2013)}>▾</span>
                                         </div>
                                     </div>
                                     <div id="leadership-content-2013" className="leadership-content">
@@ -1406,7 +1406,7 @@ export default function Carrusel({
                                 <div className="section">
                                     <div className="section-title-container">
                                         <div className="section-title" >
-                                            Key highlight <span id="leadership-arrow-2012" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2012)}>▾</span>
+                                            Purpose-Driven Solutions <span id="leadership-arrow-2012" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2012)}>▾</span>
                                         </div>
                                     </div>
                                     <div id="leadership-content-2012" className="leadership-content">
@@ -1758,16 +1758,25 @@ export default function Carrusel({
                                         <div className="ml-4">
                                             <div className="panel-section">
                                                 <h4>What did I do?:</h4>
-                                                <p>Advance research on wastewater treatment by synthesizing and characterizing specialized adsorbent materials (e.g., MCM-41) for removing pharmaceutical and personal care products. This involved designing innovative experiments, functionalizing adsorbents through thermal dispersion techniques, and evaluating their efficacy in real-world environmental applications.</p>
+                                                <p>Advance research on wastewater treatment by synthesizing and characterizing specialized adsorbent materials (e.g., MCM-41) for removing pharmaceutical and personal care products.</p>
                                             </div>
                                             <div className="panel-section">
                                                 <h4>How did I do it?:</h4>
-                                                <p>By successfully synthesizing MCM-41 for the absorption of personal care products (PPCPs), demonstrating the material{"'"}s high efficiency in removing emerging contaminants from wastewater and contributing to more sustainable water management practices.</p>
+                                                <p>This involved designing innovative experiments, functionalizing adsorbents through thermal dispersion techniques, and evaluating their efficacy in real-world environmental applications.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div className="section">
+                                    <div className="section-title-container">
+                                        <div className="section-title" >
+                                            Sustainability as Innovation <span id="leadership-arrow-2001" className="section-title-arrow right" style={{ color: "#003DAE" }} onClick={() => toggleLeadership(2001)}>▾</span>
+                                        </div>
+                                    </div>
+                                    <div id="leadership-content-2001" className="leadership-content">
+                                        <p>Successfully synthesized MCM-41 for the absorption of personal care products (PPCPs), demonstrating the material{"'"}s high efficiency in removing emerging contaminants from wastewater and contributing to more sustainable water management practices.</p>
+                                    </div>
+                                </div>
                                 <div className="section achievements-section">
                                     <div className="section-title-container">
                                         <div className="section-title">
